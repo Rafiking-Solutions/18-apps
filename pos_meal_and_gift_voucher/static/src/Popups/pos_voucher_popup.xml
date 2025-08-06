@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="pos_meal_and_gift_voucher.PosVoucherPopup">
+        <Dialog size="'lg'" title="'Meal and Gift Voucher'" footer="true">
+            <form class="pos-voucher-form">
+                <div class="col-12">
+        <div class="d-flex align-items-center gap-2">
+            <div class="btn-group" role="group">
+                <button
+                        type="button"
+                        class="btn btn-sm"
+                        t-att-class="!state.isScanMode ? 'btn-success' : 'btn-outline-success'"
+                        t-on-click="() => this.state.isScanMode = false"
+                >
+                    <i class="fa fa-keyboard-o me-1"></i>
+                    Manual
+                </button>
+                <button
+                        type="button"
+                        class="btn btn-sm"
+                        t-att-class="state.isScanMode ? 'btn-success' : 'btn-outline-success'"
+                        t-on-click="() => this.state.isScanMode = true">
+                    <i class="fa fa-barcode me-1"></i>
+                    Scanner
+                </button>
+            </div>
+        </div>
+
+        </div>
+
+                <div class="ticket-input-section mb-3">
+                    <div class="row mt-2" t-if="!state.isScanMode">
+                        <div class="col-4">
+                               <input
+                                       type="number"
+                                       class="form-control"
+                                       placeholder="Enter amount manually..."
+                                       t-model="state.currentAmount"
+                                       t-on-keydown="onInputKeydown"
+                                       t-ref="amountInput"
+
+                                       min="0"
+                               />
+
+                        </div>
+                        <div class="col-4">
+                            <input
+                                    type="text"
+                                    class="form-control"
+                                    placeholder="Enter Voucher Number..."
+                                    t-model="state.currentTicket"
+                                    t-on-keydown="onInputKeydown"
+                                    t-ref="ticketInput"
+
+                            />
+                        </div>
+                        <div class="col-4">
+                            <button
+                                    type="button"
+                                    class="btn btn-success w-100"
+                                    t-on-click="addManualTicket"
+                                    t-att-disabled="state.isScanMode"
+                            >
+                                Add
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row mt-2" t-if="state.isScanMode">
+
+    </div>
+                </div>
+                <div class="retention-info mb-3">
+                    <div class="alert alert-info py-2">
+                        <i class="fa fa-info-circle me-2"/>
+                        <small>
+                            Retention rate: <strong t-esc="state.retentionRate"/>%
+                        </small>
+                    </div>
+                </div>
+                <div class="tickets-section">
+                    <h6 class="mb-3">
+                        Ticket (<t t-esc="state.Tickets.length"/>)
+                    </h6>
+                    <div t-if="state.Tickets.length === 0" class="text-muted text-center py-5">
+                        <div class="h6">No Voucher yet</div>
+                        <small>Scan a barcode or enter an amount manually</small>
+                    </div>
+
+                    <div t-else="" class="tickets-list">
+                        <div class="table-responsive" style="max-height: 350px; overflow-y: auto;">
+                            <table class="table table-sm table-hover">
+                                <thead class="table-light sticky-top">
+                                    <tr>
+                                        <th width="25%">Number</th>
+                                        <th width="23%">Original Amount</th>
+                                        <th width="23%">Retention Amount</th>
+                                        <th width="23%">Net Amount</th>
+                                        <th width="6%"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="state.Tickets" t-as="ticket" t-key="ticket_index">
+                                        <td>
+                                            <code t-esc="ticket.code" class="small"/>
+                                        </td>
+                                        <td class="text-end">
+                                            <t t-esc="env.utils.formatCurrency(ticket.originalAmount)"/>
+                                        </td>
+                                        <td class="text-end text-warning">
+                                            <t t-if="ticket.retentionAmount > 0">
+                                                -<t t-esc="env.utils.formatCurrency(ticket.retentionAmount)"/>
+                                            </t>
+                                            <t t-else="">-</t>
+                                        </td>
+                                        <td class="text-end text-success fw-bold">
+                                            <t t-esc="env.utils.formatCurrency(ticket.netAmount)"/>
+                                        </td>
+                                        <td>
+                                            <button
+                                                    type="button"
+                                                    class="btn btn-sm btn-outline-danger"
+                                                    t-on-click="() => this.removeTicket(ticket_index)"
+                                                    title="Remove this ticket"
+                                            >
+                                                <i class="fa fa-trash"/>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div t-if="state.Tickets.length > 0" class="totals-section mt-4">
+                    <div class="card bg-light">
+                        <div class="card-body py-3">
+                            <h6 class="card-title mb-3">
+                                <i class="fa fa-calculator me-2"/>
+                                Transaction Summary
+                            </h6>
+                            <div class="row text-center">
+                                  <div class="col-3">
+                                    <div class="border-end">
+                                        <div class="text-muted small">Total To pay</div>
+                                        <div class="h5 mb-0 text-primary">
+                                            <t t-esc="env.utils.formatCurrency(state.remainingToPay)"/>
+                                        </div>
+                                    </div>
+                                  </div>
+                                <div class="col-2">
+                                    <div class="border-end">
+                                        <div class="text-muted small">Total Original</div>
+                                        <div class="h5 mb-0">
+                                            <t t-esc="env.utils.formatCurrency(state.totalOriginal)"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="border-end">
+                                        <div class="text-muted small">Total Retention</div>
+                                        <div class="h5 mb-0 text-warning">
+                                            <t t-if="state.totalRetention > 0">
+                                                -<t t-esc="env.utils.formatCurrency(state.totalRetention)"/>
+                                            </t>
+                                            <t t-else="">-</t>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                        <div class="border-end">
+                                    <div class="text-muted small">Net Amount</div>
+                                            <div class="h5 mb-0 text-success fw-bold">
+                                        <t t-esc="env.utils.formatCurrency(state.totalNet)"/>
+                                    </div>
+                                        </div>
+                                </div>
+                                <div class="col-3">
+                                       <div class="text-muted small">Remaining Amount</div>
+                                    <div class="h5 mb-0 fw-bold"
+                                         t-att-class="state.remainingAmount > 0 ? 'text-warning' : 'text-success'">
+                                        <t t-esc="env.utils.formatCurrency(state.remainingAmount)"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <t t-set-slot="footer">
+                <div class="d-flex justify-content-between align-items-center w-100">
+                    <div class="btn-group">
+                        <button
+                                type="button"
+                                class="btn btn-primary"
+                                t-on-click="confirm"
+                                t-att-disabled="state.Tickets.length === 0"
+                        >
+                            Validate
+                        </button>
+                        <button
+                                type="button"
+                                class="btn btn-secondary"
+                                t-on-click="cancel"
+                        >
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </t>
+        </Dialog>
+    </t>
+</templates>

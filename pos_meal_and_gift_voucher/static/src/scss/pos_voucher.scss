@@ -1,0 +1,30 @@
+.meal-ticket-popup {
+    max-width: 800px;
+    width: 90%;
+}
+
+.meal-ticket-popup .popup-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+
+
+.tickets-list {
+    margin-bottom: 20px;
+}
+
+.tickets-list table {
+    font-size: 0.9em;
+}
+
+.totals-section {
+    padding: 15px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.totals-section .col-4 {
+    padding: 10px;
+}

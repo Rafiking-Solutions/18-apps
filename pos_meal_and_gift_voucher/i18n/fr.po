@@ -1,0 +1,349 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* pos_meal_and_gift_voucher
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0+e-20250603\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-15 19:16+0000\n"
+"PO-Revision-Date: 2025-07-15 20:46+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.4\n"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Add"
+msgstr "Ajouter"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__create_date
+msgid "Created on"
+msgstr "Créé le"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__currency_id
+msgid "Currency"
+msgstr "Devise"
+
+#. module: pos_meal_and_gift_voucher
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.view_pos_voucher_search
+msgid "Date"
+msgstr "Date"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__datetime
+msgid "DateTime"
+msgstr "Date"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Enter Voucher Number..."
+msgstr "Saisir le numéro de chèque..."
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Enter amount manually..."
+msgstr "Saisir le montant manuellement..."
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "Error processing voucher"
+msgstr "Erreur dans le traitement du bon"
+
+#. module: pos_meal_and_gift_voucher
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.view_pos_voucher_search
+msgid "Group By"
+msgstr "Grouper par"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__id
+msgid "ID"
+msgstr ""
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "Invalid voucher barcode format"
+msgstr "Format de code-barres du chéque invalide"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__is_manual
+msgid "Is Manual?"
+msgstr "Est-ce manuel ?"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_payment__is_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_payment_method__is_voucher
+msgid "Is Meal Or Gift  Voucher"
+msgstr "Est-ce un chèque cadeau ou repas"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Manual"
+msgstr "Manuel"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Screens/pos_payment_screen.js:0
+msgid "Meal & Gift Voucher"
+msgstr "Chèque Repas & Cadeau"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.actions.act_window,name:pos_meal_and_gift_voucher.action_pos_voucher
+#: model:ir.ui.menu,name:pos_meal_and_gift_voucher.menu_pos_voucher_root
+msgid "Meal & Gift Vouchers"
+msgstr "Chèque Repas & Cadeau"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__net_amount
+msgid "Net Amount"
+msgstr "Montant Net"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "No Voucher yet"
+msgstr "Pas encore de chèque repas ou cadeau"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__name
+msgid "Nom"
+msgstr "Nom"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Number"
+msgstr "Numéro"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__pos_order_id
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.view_pos_voucher_search
+msgid "Order"
+msgstr "Commande"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__original_amount
+msgid "Original Amount"
+msgstr "Montant original"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__pos_session_id
+msgid "POS Session"
+msgstr "Session"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model,name:pos_meal_and_gift_voucher.model_pos_voucher
+msgid "POS Voucher"
+msgstr "Chèques"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__pos_payment_id
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.view_pos_voucher_search
+msgid "Payment"
+msgstr "Paiement"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__payment_method_id
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.view_pos_voucher_search
+msgid "Payment Method"
+msgstr "Mode de paiement"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "Please enter a valid amount"
+msgstr "Veuillez entrer un montant valide"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "Please enter a voucher code"
+msgstr "Veuillez saisir le numéro du Chèque"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "Please scan or add at least one ticket"
+msgstr "Veuillez scanner ou ajouter au moins un ticket"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model,name:pos_meal_and_gift_voucher.model_pos_payment_method
+msgid "Point of Sale Payment Methods"
+msgstr "Modes de paiement du point de vente"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model,name:pos_meal_and_gift_voucher.model_pos_payment
+msgid "Point of Sale Payments"
+msgstr "Paiements du point de vente"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model,name:pos_meal_and_gift_voucher.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Session du point de vente"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Remaining Amount"
+msgstr "Montant restant"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Remove this ticket"
+msgstr "Supprimer ce Chèque"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__retention_amount
+msgid "Retention Amount"
+msgstr "Montant de rétention"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_payment_method__rate_retention
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__retention_rate
+msgid "Retention Rate (%)"
+msgstr "Taux de rétention (%)"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Retention rate:"
+msgstr "Taux de rétention:"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Scan a barcode or enter an amount manually"
+msgstr "Scannez un code-barres ou saisissez un montant manuellement"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Scanner"
+msgstr "Scanner"
+
+#. module: pos_meal_and_gift_voucher
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.view_pos_voucher_search
+msgid "Session"
+msgstr "Session"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,help:pos_meal_and_gift_voucher.field_pos_payment__is_voucher
+#: model:ir.model.fields,help:pos_meal_and_gift_voucher.field_pos_payment_method__is_voucher
+msgid "This payment method accepts restaurant vouchers or gift vouchers."
+msgstr "Le mode de paiement accepte les Chèque repas ou les chèques cadeaux."
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "This voucher has already been added."
+msgstr "Ce Chèque a déjà été ajouté."
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "This voucher has already been scanned."
+msgstr "Ce Chèque a déjà été scanné."
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Ticket ("
+msgstr "Ticket ("
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Total Original"
+msgstr "Total original"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Total Retention"
+msgstr "Total rétention"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Total To pay"
+msgstr "Total à payer"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Transaction Summary"
+msgstr "Récapitulatif"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher_popup.xml:0
+msgid "Validate"
+msgstr "Valider"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_payment__voucher_count
+msgid "Voucher Count"
+msgstr "Nombre de Chèques"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_voucher__voucher_code
+msgid "Voucher Number"
+msgstr "Chèque N°"
+
+#. module: pos_meal_and_gift_voucher
+#. odoo-javascript
+#: code:addons/pos_meal_and_gift_voucher/static/src/Popups/pos_voucher.js:0
+msgid "Voucher scanned successfully"
+msgstr "Chèque scanné avec succès"
+
+#. module: pos_meal_and_gift_voucher
+#: model:ir.model.fields,field_description:pos_meal_and_gift_voucher.field_pos_payment__voucher_ids
+#: model_terms:ir.ui.view,arch_db:pos_meal_and_gift_voucher.pos_payment_view_form
+msgid "Vouchers"
+msgstr "Chèques"
