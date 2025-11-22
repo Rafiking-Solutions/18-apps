@@ -34,7 +34,6 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section avec effet dégradé amélioré */
         .hero-section {
             background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
             color: white;
@@ -109,9 +108,9 @@
             transform: translateY(-2px);
         }
 
-        /* Section des fonctionnalités avec cartes améliorées */
+        /* SECTION FONCTIONNALITES */
         .features-section {
-            background: #f8f9fa;
+            background: var(--light-gray);
             padding: 80px 0;
             position: relative;
         }
@@ -125,13 +124,13 @@
         .section-title h2 {
             font-size: 2.8rem;
             font-weight: 700;
-            color: #8B4A9C;
+            color: var(--primary-purple);
             margin-bottom: 15px;
         }
 
         .section-title p {
-            color: #999;
             font-size: 1.1rem;
+            color: #999;
         }
 
         .section-title::after {
@@ -142,15 +141,15 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, #FF8C42, #FF7B28);
+            background: linear-gradient(90deg, var(--accent-orange), var(--secondary-orange));
             border-radius: 2px;
         }
 
+        /* GRILLE DE FEATURES */
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 40px;
+            gap: 30px;
         }
 
         @media (max-width: 1024px) {
@@ -166,57 +165,58 @@
         }
 
         .feature-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-            border: 2px solid #FF8C42;
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(139, 74, 156, 0.1);
+            border: 3px solid var(--accent-orange);
             transition: all 0.4s ease;
+            text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
         }
 
         .feature-card:hover {
-            box-shadow: 0 8px 25px rgba(255, 140, 66, 0.25);
-            transform: translateY(-5px);
-            border-color: #8B4A9C;
-            background: linear-gradient(135deg, #ffffff 0%, #fff5f0 100%);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(139, 74, 156, 0.2);
+            border-color: var(--primary-purple);
+            background: linear-gradient(135deg, white, #fafafa);
         }
 
         .feature-icon {
-            font-size: 2.8rem;
-            color: #FF8C42;
-            margin-bottom: 15px;
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--secondary-orange));
+            border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 140, 66, 0.08);
-            border-radius: 10px;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(255, 140, 66, 0.3);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(-5deg);
         }
 
         .feature-card h5 {
-            font-size: 1.2rem;
+            font-size: 1.35rem;
             font-weight: 700;
-            color: #8B4A9C;
-            margin: 0 0 12px 0;
+            color: var(--primary-purple);
+            margin-bottom: 15px;
+            margin-top: 0;
         }
 
         .feature-card p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #666;
-            line-height: 1.5;
+            line-height: 1.7;
             margin: 0;
         }
 
-        .feature-content {
-            width: 100%;
-        }
-
-        /* Section de configuration avec design amélioré */
         .config-section {
             background: white;
             padding: 80px 0;
@@ -285,11 +285,6 @@
             width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .screenshot-container:hover img {
-            transform: scale(1.02);
         }
 
         .image-description {
@@ -298,19 +293,6 @@
             padding: 25px 30px;
             margin: 25px 0;
             border-radius: 0 15px 15px 0;
-            position: relative;
-        }
-
-        .image-description::before {
-            content: '';
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            width: 30px;
-            height: 30px;
-            background: var(--accent-orange);
-            border-radius: 50%;
-            opacity: 0.2;
         }
 
         .image-description h6 {
@@ -327,7 +309,6 @@
             line-height: 1.6;
         }
 
-        /* Améliorations des check marks */
         .check-item {
             color: var(--success-green);
             font-weight: 500;
@@ -351,7 +332,6 @@
             font-weight: bold;
         }
 
-        /* Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -363,32 +343,21 @@
             }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
             }
-
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-
             .config-card {
                 padding: 30px 20px;
             }
-
             .section-title h2 {
                 font-size: 2.2rem;
             }
         }
 
-        /* Footer amélioré */
         .footer-section {
             background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple));
             color: white;
@@ -426,7 +395,6 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Services Section Styles */
         .services-section {
             position: relative;
         }
@@ -449,8 +417,6 @@
             transform: scale(1.02);
             box-shadow: 0 25px 50px rgba(139, 74, 156, 0.25);
         }
-
-
     </style>
 </head>
 <body>
@@ -488,60 +454,48 @@
                 <div class="feature-icon">
                     <i class="fas fa-ticket-alt"></i>
                 </div>
-                <div class="feature-content">
-                    <h5>Types Personnalisés</h5>
-                    <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
-                </div>
+                <h5>Types Personnalisés</h5>
+                <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-calculator"></i>
                 </div>
-                <div class="feature-content">
-                    <h5>Calcul Intelligent</h5>
-                    <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
-                </div>
+                <h5>Calcul Intelligent</h5>
+                <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-qrcode"></i>
                 </div>
-                <div class="feature-content">
-                    <h5>Scan & Saisie</h5>
-                    <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
-                </div>
+                <h5>Scan & Saisie</h5>
+                <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <div class="feature-content">
-                    <h5>Traçabilité Totale</h5>
-                    <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
-                </div>
+                <h5>Traçabilité Totale</h5>
+                <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-lock"></i>
                 </div>
-                <div class="feature-content">
-                    <h5>Sécurité Avancée</h5>
-                    <p>Protection complète des données avec authentification multi-niveaux et chiffrement.</p>
-                </div>
+                <h5>Sécurité Avancée</h5>
+                <p>Protection complète des données avec authentification multi-niveaux et chiffrement.</p>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-sync-alt"></i>
                 </div>
-                <div class="feature-content">
-                    <h5>Synchronisation Temps Réel</h5>
-                    <p>Mise à jour instantanée des informations entre tous les terminaux du point de vente.</p>
-                </div>
+                <h5>Synchronisation Temps Réel</h5>
+                <p>Mise à jour instantanée des informations entre tous les terminaux du point de vente.</p>
             </div>
         </div>
     </div>
@@ -554,7 +508,6 @@
             <h2>Fonctionnement</h2>
         </div>
 
-        <!-- Étape 1 -->
         <div class="config-card" id="step1">
             <h3 class="config-title">
                 <span class="step-number">1</span>
@@ -563,7 +516,7 @@
             <div class="row align-items-center">
                 <div class="col-12 text-center">
                     <div class="screenshot-container">
-                        <img src="./images/1.jpeg" alt="Configuration Types Tickets" class="img-fluid">
+                        <img src="1.jpeg" alt="Configuration Types Tickets" class="img-fluid">
                     </div>
                     <div class="image-description">
                         <h6>Interface de Configuration des Types</h6>
@@ -573,7 +526,6 @@
             </div>
         </div>
 
-        <!-- Étape 2 -->
         <div class="config-card" id="step2">
             <h3 class="config-title">
                 <span class="step-number">2</span>
@@ -592,7 +544,6 @@
             </div>
         </div>
 
-        <!-- Étape 3 -->
         <div class="config-card" id="step3">
             <h3 class="config-title">
                 <span class="step-number">3</span>
@@ -605,13 +556,12 @@
                     </div>
                     <div class="image-description">
                         <h6>Configuration POS Avancée</h6>
-                        <p>Liste complète des modes de paiement disponibles. Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic sur le mode pour enregistrer les informations ou scanner le ticket.</p>
+                        <p>Liste complète des modes de paiement disponibles. Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic sur le mode.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Étape 4 -->
         <div class="config-card" id="step4">
             <h3 class="config-title">
                 <span class="step-number">4</span>
@@ -624,13 +574,12 @@
                     </div>
                     <div class="image-description">
                         <h6>Interface de Saisie Intuitive</h6>
-                        <p>Interface permettant la saisie rapide des informations : numéro de ticket, montant, avec calcul automatique et instantané de la déduction appliquée.</p>
+                        <p>Interface permettant la saisie rapide des informations : numéro de ticket, montant, avec calcul automatique de la déduction.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Étape 5 -->
         <div class="config-card" id="step5">
             <h3 class="config-title">
                 <span class="step-number">5</span>
@@ -662,7 +611,6 @@
             </div>
         </div>
 
-        <!-- Étape 6 -->
         <div class="config-card" id="step6">
             <h3 class="config-title">
                 <span class="step-number">6</span>
@@ -681,7 +629,6 @@
             </div>
         </div>
 
-        <!-- Étape 7 -->
         <div class="config-card" id="step7">
             <h3 class="config-title">
                 <span class="step-number">7</span>
@@ -694,7 +641,7 @@
                     </div>
                     <div class="image-description">
                         <h6>Interface de Gestion des Tickets</h6>
-                        <p>Interface de suivi des tickets traités avec toutes les informations essentielles : date de traitement, numéro de ticket, montant original, taux de rétention appliqué, montant de déduction calculé et montant net final.</p>
+                        <p>Interface de suivi des tickets traités avec toutes les informations essentielles.</p>
                     </div>
                 </div>
             </div>
@@ -707,7 +654,7 @@
     <div class="container">
         <div class="section-title">
             <h2>Nos Services Odoo</h2>
-            <p class="lead text-muted">Expertise complète pour votre transformation digitale</p>
+            <p>Expertise complète pour votre transformation digitale</p>
         </div>
 
         <div class="row justify-content-center">
