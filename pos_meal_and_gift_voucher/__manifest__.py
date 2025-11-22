@@ -10,6 +10,17 @@
     "depends": [
         "point_of_sale",
     ],
+    'tags': [
+        'pos',
+        'meal voucher',
+        'gift voucher',
+        'ticket restaurant',
+        'chèque repas',
+        'chèque cadeau',
+        'payment method',
+        'barcode scanner',
+        'retention rate'
+    ],
     "data": [
         "security/ir.model.access.csv",
         "views/pos_payment_method_view.xml",
