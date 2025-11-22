@@ -148,47 +148,59 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
             margin-top: 40px;
         }
 
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .feature-card {
-            background: #ffffff;
-            border-radius: 15px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(139, 74, 156, 0.08);
-            border-left: 5px solid #FF8C42;
-            transition: all 0.3s ease;
-            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 2px solid #FF8C42;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(139, 74, 156, 0.15);
-            border-left-color: #8B4A9C;
+            box-shadow: 0 8px 30px rgba(255, 140, 66, 0.2);
+            transform: translateY(-5px);
+            border-color: #8B4A9C;
         }
 
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: inline-block;
+            font-size: 2.2rem;
             color: #FF8C42;
+            min-width: 60px;
+            text-align: center;
+            flex-shrink: 0;
         }
 
         .feature-card h5 {
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: #8B4A9C;
-            margin-bottom: 12px;
-            margin-top: 0;
+            margin: 0 0 10px 0;
         }
 
         .feature-card p {
-            font-size: 0.95rem;
-            color: #666;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
             margin: 0;
+        }
+
+        .feature-content {
+            flex: 1;
         }
 
         /* Section de configuration avec design amélioré */
@@ -463,48 +475,60 @@
                 <div class="feature-icon">
                     <i class="fas fa-ticket-alt"></i>
                 </div>
-                <h5>Types Personnalisés</h5>
-                <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
+                <div class="feature-content">
+                    <h5>Types Personnalisés</h5>
+                    <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
+                </div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-calculator"></i>
                 </div>
-                <h5>Calcul Intelligent</h5>
-                <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
+                <div class="feature-content">
+                    <h5>Calcul Intelligent</h5>
+                    <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
+                </div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-qrcode"></i>
                 </div>
-                <h5>Scan & Saisie</h5>
-                <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
+                <div class="feature-content">
+                    <h5>Scan & Saisie</h5>
+                    <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
+                </div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h5>Traçabilité Totale</h5>
-                <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
+                <div class="feature-content">
+                    <h5>Traçabilité Totale</h5>
+                    <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
+                </div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-lock"></i>
                 </div>
-                <h5>Sécurité Avancée</h5>
-                <p>Protection complète des données avec authentification multi-niveaux et chiffrement.</p>
+                <div class="feature-content">
+                    <h5>Sécurité Avancée</h5>
+                    <p>Protection complète des données avec authentification multi-niveaux et chiffrement.</p>
+                </div>
             </div>
 
             <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-sync-alt"></i>
                 </div>
-                <h5>Synchronisation Temps Réel</h5>
-                <p>Mise à jour instantanée des informations entre tous les terminaux du point de vente.</p>
+                <div class="feature-content">
+                    <h5>Synchronisation Temps Réel</h5>
+                    <p>Mise à jour instantanée des informations entre tous les terminaux du point de vente.</p>
+                </div>
             </div>
         </div>
     </div>
