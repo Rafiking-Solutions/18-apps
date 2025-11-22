@@ -111,7 +111,7 @@
 
         /* Section des fonctionnalités avec cartes améliorées */
         .features-section {
-            background: var(--light-gray);
+            background: #f8f9fa;
             padding: 80px 0;
             position: relative;
         }
@@ -125,8 +125,13 @@
         .section-title h2 {
             font-size: 2.8rem;
             font-weight: 700;
-            color: var(--primary-purple);
+            color: #8B4A9C;
             margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: #999;
+            font-size: 1.1rem;
         }
 
         .section-title::after {
@@ -137,70 +142,53 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent-orange), var(--secondary-orange));
+            background: linear-gradient(90deg, #FF8C42, #FF7B28);
             border-radius: 2px;
         }
 
-        .feature-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            height: 100%;
-            box-shadow: 0 15px 35px rgba(139, 74, 156, 0.1);
-            transition: all 0.4s ease;
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
         }
 
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent-orange), var(--secondary-orange));
+        .feature-card {
+            background: #ffffff;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(139, 74, 156, 0.08);
+            border-left: 5px solid #FF8C42;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(139, 74, 156, 0.2);
-            border-color: var(--light-purple);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 45px rgba(139, 74, 156, 0.15);
+            border-left-color: #8B4A9C;
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--accent-orange), var(--secondary-orange));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 25px;
-            color: white;
-            font-size: 28px;
-            box-shadow: 0 8px 25px rgba(255, 140, 66, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            color: #FF8C42;
         }
 
         .feature-card h5 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--primary-purple);
-            margin-bottom: 15px;
-            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #8B4A9C;
+            margin-bottom: 12px;
+            margin-top: 0;
         }
 
         .feature-card p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #666;
-            text-align: center;
-            line-height: 1.7;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* Section de configuration avec design amélioré */
@@ -437,65 +425,7 @@
             box-shadow: 0 25px 50px rgba(139, 74, 156, 0.25);
         }
 
-        /* Blocs Fonctionnalités Avancées */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
 
-        .feature-block {
-            background: white;
-            border-radius: 15px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(139, 74, 156, 0.08);
-            border-left: 5px solid var(--accent-orange);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .feature-block:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 45px rgba(139, 74, 156, 0.15);
-            border-left-color: var(--primary-purple);
-        }
-
-        .feature-block-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-orange), var(--secondary-orange));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .feature-block h3 {
-            color: var(--primary-purple);
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .feature-block p {
-            color: #666;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .feature-block::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            background: var(--accent-orange);
-            opacity: 0.05;
-            border-radius: 50%;
-        }
     </style>
 </head>
 <body>
@@ -525,56 +455,56 @@
     <div class="container">
         <div class="section-title">
             <h2>Fonctionnalités Avancées</h2>
-            <p class="lead text-muted">Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
+            <p>Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
         </div>
 
         <div class="features-grid">
-            <div class="feature-block">
-                <div class="feature-block-icon">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fas fa-ticket-alt"></i>
                 </div>
-                <h3>Types Personnalisés</h3>
+                <h5>Types Personnalisés</h5>
                 <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
             </div>
 
-            <div class="feature-block">
-                <div class="feature-block-icon">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fas fa-calculator"></i>
                 </div>
-                <h3>Calcul Intelligent</h3>
+                <h5>Calcul Intelligent</h5>
                 <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
             </div>
 
-            <div class="feature-block">
-                <div class="feature-block-icon">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fas fa-qrcode"></i>
                 </div>
-                <h3>Scan & Saisie</h3>
+                <h5>Scan & Saisie</h5>
                 <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
             </div>
 
-            <div class="feature-block">
-                <div class="feature-block-icon">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Traçabilité Totale</h3>
+                <h5>Traçabilité Totale</h5>
                 <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
             </div>
 
-            <div class="feature-block">
-                <div class="feature-block-icon">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fas fa-lock"></i>
                 </div>
-                <h3>Sécurité Avancée</h3>
-                <p>Protection complète des données avec authentification multi-niveaux et chiffrement des transactions.</p>
+                <h5>Sécurité Avancée</h5>
+                <p>Protection complète des données avec authentification multi-niveaux et chiffrement.</p>
             </div>
 
-            <div class="feature-block">
-                <div class="feature-block-icon">
+            <div class="feature-card">
+                <div class="feature-icon">
                     <i class="fas fa-sync-alt"></i>
                 </div>
-                <h3>Synchronisation Temps Réel</h3>
-                <p>Mise à jour instantanée des informations entre tous les terminaux de point de vente.</p>
+                <h5>Synchronisation Temps Réel</h5>
+                <p>Mise à jour instantanée des informations entre tous les terminaux du point de vente.</p>
             </div>
         </div>
     </div>
