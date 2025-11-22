@@ -2,213 +2,184 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎫 POS Meal & Gift Voucher</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* === Variables === */
+        :root {
+            --primary-purple: #8B4A9C;
+            --secondary-purple: #6B3A7C;
+            --accent-orange: #FF8C42;
+            --secondary-orange: #FF7B28;
+            --light-gray: #F8F9FA;
+            --success-green: #27AE60;
+            --white: #FFFFFF;
+            --light-purple: #E8D5ED;
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; font-family: 'Poppins', sans-serif; }
+
+        body { line-height:1.6; color: #2C3E50; }
+
+        /* === Hero Section === */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--secondary-purple) 50%, var(--primary-purple) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-title { font-size: 3rem; font-weight: 800; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero-subtitle { font-size: 1.2rem; opacity: 0.9; margin-bottom: 2rem; }
+        .hero-badge {
+            background: var(--accent-orange);
+            color:white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin: 0 5px;
+            display:inline-block;
+            font-weight:600;
+        }
+
+        /* === Features Section === */
+        .features-section { background: var(--light-gray); padding: 80px 0; }
+        .section-title { text-align:center; margin-bottom:60px; }
+        .section-title h2 { color: var(--primary-purple); font-weight:700; font-size:2.5rem; margin-bottom:15px; }
+        .section-title p { color:#555; }
+
+        .feature-card {
+            background:white;
+            border-radius:20px;
+            padding:30px 20px;
+            text-align:center;
+            box-shadow:0 15px 35px rgba(139,74,156,0.1);
+            transition:all 0.3s ease;
+            margin-bottom:30px;
+        }
+        .feature-card:hover { transform:translateY(-5px); box-shadow:0 25px 50px rgba(139,74,156,0.2); }
+        .feature-icon {
+            font-size:28px; color:white; width:70px; height:70px; margin:0 auto 15px;
+            display:flex; align-items:center; justify-content:center;
+            border-radius:15px;
+            background: linear-gradient(135deg, var(--accent-orange), var(--secondary-orange));
+        }
+
+        /* === Config Section === */
+        .config-section { background:white; padding:80px 0; }
+        .config-card {
+            background:white;
+            border-radius:25px;
+            padding:50px 30px;
+            margin-bottom:40px;
+            box-shadow:0 20px 40px rgba(139,74,156,0.1);
+            border:1px solid var(--light-purple);
+        }
+        .config-title { font-size:1.5rem; font-weight:700; color: var(--primary-purple); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
+        .step-number {
+            background: linear-gradient(135deg, var(--accent-orange), var(--secondary-orange));
+            color:white; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:700;
+        }
+        .screenshot-container { border-radius:15px; overflow:hidden; box-shadow:0 15px 30px rgba(0,0,0,0.1); margin-bottom:20px; }
+        .screenshot-container img { width:100%; display:block; }
+
+        .image-description { background: linear-gradient(135deg, var(--light-purple), rgba(232,213,237,0.5)); padding:20px; border-left:6px solid var(--accent-orange); border-radius:0 10px 10px 0; }
+        .image-description h6 { color:var(--primary-purple); font-weight:600; margin-bottom:10px; }
+        .image-description p { color:#555; line-height:1.5; }
+
+        .check-item { color: var(--success-green); margin:5px 0; display:flex; align-items:center; gap:10px; }
+        .check-item::before {
+            content: '✓'; background: var(--success-green); color:white; width:20px; height:20px;
+            display:flex; align-items:center; justify-content:center; border-radius:50%; font-size:12px; font-weight:bold;
+        }
+
+        /* === Footer === */
+        .footer-section { background: linear-gradient(135deg, var(--secondary-purple), var(--primary-purple)); color:white; padding:60px 0 30px; text-align:center; }
+        .footer-links a { color:white; text-decoration:none; margin:0 15px; font-weight:500; }
+        .footer-links a:hover { color: var(--accent-orange); }
+        .company-info { background: rgba(255,255,255,0.1); padding:20px; border-radius:10px; margin-top:20px; }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .hero-title { font-size:2rem; }
+            .hero-subtitle { font-size:1rem; }
+            .config-card { padding:30px 20px; }
+        }
+    </style>
 </head>
 <body>
 
 <!-- Hero Section -->
-<div style="background: linear-gradient(135deg, #8B4A9C 0%, #6B3A7C 100%); color: white; padding: 60px 20px; text-align: center; margin: 0 0 40px 0;">
-    <h1 style="font-size: 2.8rem; font-weight: 800; margin: 0 0 20px 0; color: white;">🎫 POS Meal & Gift Voucher</h1>
-    <p style="font-size: 1.2rem; margin: 0 auto 30px auto; max-width: 900px; line-height: 1.6; color: white; opacity: 0.95;">
-        Solution complète Odoo pour gérer facilement les <strong>chèques-repas</strong> et <strong>bons cadeaux</strong> depuis votre point de vente.<br>
-        Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.
-    </p>
-    <div style="margin-top: 25px;">
-        <span style="display: inline-block; background: #FF8C42; color: white; padding: 10px 20px; border-radius: 20px; font-weight: 600; margin: 5px;">✓ Odoo Enterprise</span>
-        <span style="display: inline-block; background: #FF8C42; color: white; padding: 10px 20px; border-radius: 20px; font-weight: 600; margin: 5px;">✓ Odoo Community</span>
-        <span style="display: inline-block; background: #FF8C42; color: white; padding: 10px 20px; border-radius: 20px; font-weight: 600; margin: 5px;">✓ Interface intuitive</span>
+<section class="hero-section">
+    <div class="container">
+        <h1 class="hero-title">🎫 POS Meal & Gift Voucher</h1>
+        <p class="hero-subtitle">Solution complète Odoo pour gérer facilement les chèques-repas et bons cadeaux depuis votre point de vente. Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.</p>
+        <div class="hero-badges">
+            <span class="hero-badge">Odoo Enterprise</span>
+            <span class="hero-badge">Odoo Community</span>
+            <span class="hero-badge">Interface intuitive</span>
+        </div>
     </div>
-</div>
+</section>
 
-<!-- Fonctionnalités -->
-<div style="background-color: #F8F9FA; padding: 50px 20px;">
-    <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-size: 2.5rem; color: #8B4A9C; margin: 0 0 10px 0; font-weight: 700;">Fonctionnalités Avancées</h2>
-        <p style="color: #666; font-size: 1.1rem; margin: 10px 0 0 0;">Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
-        <hr style="width: 80px; height: 4px; background-color: #FF8C42; border: none; margin: 20px auto;">
-    </div>
-
-    <table width="100%" cellpadding="0" cellspacing="20" style="max-width: 1200px; margin: 0 auto;">
-        <tr>
-            <td width="25%" align="center" valign="top">
-                <div style="background-color: white; border-radius: 15px; padding: 30px 20px; border-top: 4px solid #FF8C42; box-shadow: 0 4px 15px rgba(0,0,0,0.08); min-height: 320px;">
-                    <p style="font-size: 4rem; margin: 0 0 20px 0;">🎫</p>
-                    <h3 style="color: #8B4A9C; font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 600;">Types Personnalisés</h3>
-                    <p style="color: #666; line-height: 1.7; margin: 0; font-size: 1rem;">Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Fonctionnalités Avancées</h2>
+            <p>Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-ticket-alt"></i></div>
+                    <h5>Types Personnalisés</h5>
+                    <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
                 </div>
-            </td>
-            <td width="25%" align="center" valign="top">
-                <div style="background-color: white; border-radius: 15px; padding: 30px 20px; border-top: 4px solid #FF8C42; box-shadow: 0 4px 15px rgba(0,0,0,0.08); min-height: 320px;">
-                    <p style="font-size: 4rem; margin: 0 0 20px 0;">🧮</p>
-                    <h3 style="color: #8B4A9C; font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 600;">Calcul Intelligent</h3>
-                    <p style="color: #666; line-height: 1.7; margin: 0; font-size: 1rem;">Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-calculator"></i></div>
+                    <h5>Calcul Intelligent</h5>
+                    <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
                 </div>
-            </td>
-            <td width="25%" align="center" valign="top">
-                <div style="background-color: white; border-radius: 15px; padding: 30px 20px; border-top: 4px solid #FF8C42; box-shadow: 0 4px 15px rgba(0,0,0,0.08); min-height: 320px;">
-                    <p style="font-size: 4rem; margin: 0 0 20px 0;">📱</p>
-                    <h3 style="color: #8B4A9C; font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 600;">Scan & Saisie</h3>
-                    <p style="color: #666; line-height: 1.7; margin: 0; font-size: 1rem;">Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-qrcode"></i></div>
+                    <h5>Scan & Saisie</h5>
+                    <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
                 </div>
-            </td>
-            <td width="25%" align="center" valign="top">
-                <div style="background-color: white; border-radius: 15px; padding: 30px 20px; border-top: 4px solid #FF8C42; box-shadow: 0 4px 15px rgba(0,0,0,0.08); min-height: 320px;">
-                    <p style="font-size: 4rem; margin: 0 0 20px 0;">📊</p>
-                    <h3 style="color: #8B4A9C; font-size: 1.3rem; margin: 0 0 15px 0; font-weight: 600;">Traçabilité Totale</h3>
-                    <p style="color: #666; line-height: 1.7; margin: 0; font-size: 1rem;">Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h5>Traçabilité Totale</h5>
+                    <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
                 </div>
-            </td>
-        </tr>
-    </table>
-</div>
-
-<!-- Guide Configuration -->
-<div style="background-color: white; padding: 50px 20px;">
-    <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-size: 2.5rem; color: #8B4A9C; margin: 0 0 10px 0; font-weight: 700;">Guide de Configuration</h2>
-        <hr style="width: 80px; height: 4px; background-color: #FF8C42; border: none; margin: 20px auto;">
+            </div>
+        </div>
     </div>
-
-    <div style="max-width: 1000px; margin: 0 auto;">
-
-        <!-- Étape 1 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <table width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                    <td>
-                        <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                            <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">1</span>
-                            Configuration des Types de Tickets
-                        </h3>
-                        <img src="/pos_meal_and_gift_voucher/static/description/1.jpeg" alt="Configuration Types" style="width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-                        <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                            <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 10px 0; font-size: 1.15rem;">📋 Interface de Configuration</h4>
-                            <p style="color: #555; margin: 0; line-height: 1.7;">Créez et paramétrez facilement vos différents types de tickets (chèques-repas, bons cadeaux) avec leurs taux de déduction spécifiques.</p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        <!-- Étape 2 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">2</span>
-                Configuration des Modes de Paiement
-            </h3>
-            <img src="/pos_meal_and_gift_voucher/static/description/2.jpeg" alt="Modes Paiement" style="width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 10px 0; font-size: 1.15rem;">💳 Modes de Paiement</h4>
-                <p style="color: #555; margin: 0; line-height: 1.7;">Intégrez les nouveaux modes de paiement par tickets dans la liste des moyens disponibles dans votre point de vente.</p>
-            </div>
-        </div>
-
-        <!-- Étape 3 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">3</span>
-                Paramètres du Point de Vente
-            </h3>
-            <img src="/pos_meal_and_gift_voucher/static/description/3.jpeg" alt="POS Config" style="width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 10px 0; font-size: 1.15rem;">⚡ Configuration POS</h4>
-                <p style="color: #555; margin: 0; line-height: 1.7;">Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic pour enregistrer les informations ou scanner le ticket.</p>
-            </div>
-        </div>
-
-        <!-- Étape 4 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">4</span>
-                Saisie Manuelle des Tickets
-            </h3>
-            <img src="/pos_meal_and_gift_voucher/static/description/4.jpeg" alt="Saisie Manuelle" style="width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 10px 0; font-size: 1.15rem;">✏️ Interface Intuitive</h4>
-                <p style="color: #555; margin: 0; line-height: 1.7;">Saisie rapide des informations : numéro de ticket, montant, avec calcul automatique et instantané de la déduction appliquée.</p>
-            </div>
-        </div>
-
-        <!-- Étape 5 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">5</span>
-                Scan de Codes-Barres
-            </h3>
-            <img src="/pos_meal_and_gift_voucher/static/description/6.jpeg" alt="Scan Interface" style="width: 100%; border-radius: 12px; margin: 20px 0 15px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <img src="/pos_meal_and_gift_voucher/static/description/7.jpeg" alt="Scan Result" style="width: 100%; border-radius: 12px; margin: 15px 0 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 12px 0; font-size: 1.15rem;">📱 Mode Scanner Ultra-Rapide</h4>
-                <p style="color: #555; margin: 0 0 15px 0; line-height: 1.7;">Interface POS optimisée avec mode "Scanner" intégré pour une lecture instantanée des codes-barres.</p>
-                <table width="100%" cellpadding="5" cellspacing="0">
-                    <tr>
-                        <td width="50%" valign="top">
-                            <p style="color: #27AE60; margin: 5px 0; font-size: 0.95rem;">✓ Lecture automatique</p>
-                            <p style="color: #27AE60; margin: 5px 0; font-size: 0.95rem;">✓ Identification instantanée</p>
-                            <p style="color: #27AE60; margin: 5px 0; font-size: 0.95rem;">✓ Détection du montant</p>
-                        </td>
-                        <td width="50%" valign="top">
-                            <p style="color: #27AE60; margin: 5px 0; font-size: 0.95rem;">✓ Application immédiate</p>
-                            <p style="color: #27AE60; margin: 5px 0; font-size: 0.95rem;">✓ Zéro erreur</p>
-                            <p style="color: #27AE60; margin: 5px 0; font-size: 0.95rem;">✓ Gain de temps</p>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- Étape 6 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">6</span>
-                Validation & Impression
-            </h3>
-            <img src="/pos_meal_and_gift_voucher/static/description/9.jpeg" alt="Receipt" style="width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 10px 0; font-size: 1.15rem;">🧾 Reçu Professionnel</h4>
-                <p style="color: #555; margin: 0; line-height: 1.7;">Ticket de caisse complet avec détail précis de tous les modes de paiement utilisés.</p>
-            </div>
-        </div>
-
-        <!-- Étape 7 -->
-        <div style="background-color: #FFFFFF; border-radius: 15px; padding: 40px 30px; margin-bottom: 40px; box-shadow: 0 10px 30px rgba(139, 74, 156, 0.1); border-left: 6px solid #FF8C42;">
-            <h3 style="color: #8B4A9C; font-size: 1.7rem; margin: 0 0 25px 0; font-weight: 700;">
-                <span style="display: inline-block; background: linear-gradient(135deg, #FF8C42, #FF7B28); color: white; width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: 12px; font-weight: 700;">7</span>
-                Suivi des Tickets
-            </h3>
-            <img src="/pos_meal_and_gift_voucher/static/description/10.jpeg" alt="Tracking" style="width: 100%; border-radius: 12px; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.1); display: block;">
-            <div style="background: linear-gradient(135deg, #E8D5ED, rgba(232, 213, 237, 0.6)); padding: 20px 25px; border-radius: 10px; border-left: 4px solid #FF8C42; margin-top: 20px;">
-                <h4 style="color: #8B4A9C; font-weight: 600; margin: 0 0 10px 0; font-size: 1.15rem;">📊 Gestion Complète</h4>
-                <p style="color: #555; margin: 0; line-height: 1.7;">Suivi des tickets traités avec toutes les informations : date, numéro, montant original, taux de rétention, déduction et montant net final.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<!-- Services -->
-<div style="background: linear-gradient(135deg, #F8F9FA, white); padding: 50px 20px;">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h2 style="font-size: 2.5rem; color: #8B4A9C; margin: 0 0 10px 0; font-weight: 700;">Nos Services Odoo</h2>
-        <p style="color: #666; font-size: 1.1rem;">Expertise complète pour votre transformation digitale</p>
-        <hr style="width: 80px; height: 4px; background-color: #FF8C42; border: none; margin: 20px auto;">
-    </div>
-    <div style="text-align: center; max-width: 1000px; margin: 0 auto;">
-        <img src="/pos_meal_and_gift_voucher/static/description/services.jpeg" alt="Services RAFIKING" style="width: 100%; border-radius: 15px; box-shadow: 0 15px 35px rgba(139, 74, 156, 0.15); display: block;">
-    </div>
-</div>
+</section>
 
 <!-- Footer -->
-<div style="background: linear-gradient(135deg, #6B3A7C, #8B4A9C); color: white; padding: 50px 20px; text-align: center;">
-    <h3 style="font-size: 1.8rem; margin: 0 0 30px 0; color: #FFE4D1; font-weight: 600;">Solution POS Meal & Gift Voucher</h3>
-    <div style="background-color: rgba(255, 255, 255, 0.1); padding: 30px; border-radius: 15px; max-width: 800px; margin: 0 auto;">
-        <p style="margin: 5px 0; font-size: 1.2rem; font-weight: 600; color: white;">RAFIKING Solutions</p>
-        <p style="margin: 5px 0; font-size: 1rem; color: white; opacity: 0.9;">Expert Odoo & Solutions Business</p>
-        <hr style="border: none; height: 1px; background-color: rgba(255,255,255,0.2); margin: 20px 0;">
-        <p style="margin: 8px 0; font-size: 1rem; color: white;">📞 <strong>+216 52599228</strong></p>
-        <p style="margin: 8px 0; font-size: 1rem; color: white;">📧 <strong>contact@rafikingsolutions.com</strong></p>
-        <p style="margin: 8px 0; font-size: 1rem; color: white;">🌐 <strong>www.rafikingsolutions.com</strong></p>
+<section class="footer-section">
+    <div class="container">
+        <h4>Solution POS Meal & Gift Voucher</h4>
+        <div class="footer-links">
+            <a href="#step1">Configuration</a>
+            <a href="#step4">Utilisation</a>
+            <a href="#step7">Reporting</a>
+        </div>
+        <div class="company-info">
+            <p><strong>RAFIKING Solutions</strong> - Expert Odoo & Solutions Business</p>
+            <p>📞 +216 52599228 | 📧 contact@rafikingsolutions.com | 🌐 www.rafikingsolutions.com</p>
+        </div>
     </div>
-</div>
+</section>
 
 </body>
 </html>
