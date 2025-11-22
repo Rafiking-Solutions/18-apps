@@ -6,7 +6,7 @@
     "author": "Rafiking Solutions",
     "website": "https://www.rafikingsolutions.com",
     "license": "OPL-1",
-    "price": 170,
+    "price": 170.00,
     "depends": [
         "point_of_sale",
     ],
