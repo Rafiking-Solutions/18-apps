@@ -42,6 +42,6 @@
         ],
     },
 
-    'images': ['static/description/icon.png'],
+    'images': ['static/images/banner.png'],
 
 }
