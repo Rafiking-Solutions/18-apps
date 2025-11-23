@@ -248,6 +248,12 @@
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 14px;
         }
 
         .step-image img {
@@ -406,6 +412,15 @@
         em {
             font-style: italic;
         }
+
+        .services-placeholder {
+            width: 100%;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 8px;
+            padding: 60px 20px;
+            text-align: center;
+            color: #999;
+        }
     </style>
 </head>
 <body>
@@ -475,7 +490,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="1.jpeg" alt="Configuration Types Tickets"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 1.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
 
@@ -491,7 +508,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="2.jpeg" alt="Configuration Mode Paiement"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 2.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
 
@@ -507,7 +526,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="3.jpeg" alt="Paramètres POS"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 3.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
 
@@ -523,7 +544,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="4.jpeg" alt="Saisie manuelle"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 4.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
 
@@ -547,7 +570,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="6.jpeg" alt="Interface scan"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 6.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
 
@@ -563,7 +588,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="9.jpeg" alt="Ticket imprimé"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 9.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
 
@@ -579,7 +606,9 @@
                     </div>
                 </div>
                 <div class="step-image">
-                    <img src="10.jpeg" alt="Liste des tickets"/>
+                    <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <span>Image 10.jpeg (placeholder)</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -593,8 +622,8 @@
         <p class="section-intro">Des solutions complètes pour optimiser votre business avec Odoo</p>
         <div class="divider"></div>
 
-        <div style="max-width: 100%; margin: 0 auto;">
-            <img src="services.jpeg" alt="Services Rafiking Solutions" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);"/>
+        <div class="services-placeholder">
+            <p>Services Rafiking Solutions</p>
         </div>
     </div>
 </section>
