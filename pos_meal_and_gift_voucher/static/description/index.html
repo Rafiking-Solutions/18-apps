@@ -2,187 +2,22 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #8B4A9C 0%, #FF8C42 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 35px;
-            border-radius: 15px;
-            min-height: 240px;
-            text-align: center;
-            border: none;
-            box-shadow: 0 10px 30px rgba(139, 74, 156, 0.15);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, #8B4A9C 0%, #FF8C42 100%);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(139, 74, 156, 0.25);
-        }
-
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #8B4A9C 0%, #FF8C42 100%);
-            color: white;
-            border-radius: 12px;
-            font-weight: bold;
-            font-size: 24px;
-            margin-right: 15px;
-            box-shadow: 0 5px 15px rgba(139, 74, 156, 0.3);
-        }
-
-        .info-box {
-            background: linear-gradient(135deg, #f8f3fc 0%, #fff5ed 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border-left: 5px solid #FF8C42;
-            margin-top: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        }
-
-        .badge {
-            background: linear-gradient(135deg, #FF8C42 0%, #ff7028 100%);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 25px;
-            margin: 8px;
-            display: inline-block;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(255, 140, 66, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 140, 66, 0.4);
-        }
-
-        .section-title {
-            position: relative;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, #8B4A9C 0%, #FF8C42 100%);
-            border-radius: 2px;
-        }
-
-        .advantage-item {
-            color: #27AE60;
-            font-weight: 600;
-            margin: 12px 0;
-            font-size: 15px;
-            padding-left: 10px;
-            border-left: 3px solid #27AE60;
-            transition: all 0.3s ease;
-        }
-
-        .advantage-item:hover {
-            padding-left: 20px;
-            border-left-width: 5px;
-        }
-
-        .contact-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            padding: 40px;
-            border-radius: 20px;
-            max-width: 750px;
-            margin: 0 auto;
-            border: 2px solid #8B4A9C;
-            box-shadow: 0 10px 40px rgba(139, 74, 156, 0.2);
-        }
-
-        .contact-item {
-            font-size: 17px;
-            color: #555;
-            margin: 15px 0;
-            padding: 12px 20px;
-            background: white;
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 5px 15px rgba(139, 74, 156, 0.15);
-        }
-
-        .screenshot-container {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            transition: all 0.4s ease;
-        }
-
-        .screenshot-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
-        }
-
-        .icon-emoji {
-            font-size: 4.5rem;
-            margin: 0 0 20px 0;
-            display: inline-block;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-    </style>
 </head>
 <body>
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan gradient-text" style="font-size: 48px; font-weight: 700;">🎫 POS MEAL & GIFT VOUCHER</h2>
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size: 48px; font-weight: 700;">🎫 POS MEAL & GIFT VOUCHER</h2>
             <h3 class="oe_slogan" style="color:#666; font-size: 22px; font-weight: 400;">Solution complète Odoo pour gérer facilement les chèques-repas et bons cadeaux</h3>
             <div class="oe_mt32" style="text-align: center; line-height: 2; margin-top: 30px;">
-                <p style="font-size: 19px; color:#555; font-weight: 300;">
+                <p style="font-size: 19px; color:#555;">
                     Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.
                 </p>
                 <div class="oe_mt16" style="margin-top: 25px;">
-                    <span class="badge">✓ Odoo Enterprise</span>
-                    <span class="badge">✓ Odoo Community</span>
-                    <span class="badge">✓ Interface intuitive</span>
+                    <span style="background:#FF8C42; color:white; padding:10px 25px; border-radius:25px; margin:8px; display:inline-block; font-weight:600;">✓ Odoo Enterprise</span>
+                    <span style="background:#FF8C42; color:white; padding:10px 25px; border-radius:25px; margin:8px; display:inline-block; font-weight:600;">✓ Odoo Community</span>
+                    <span style="background:#FF8C42; color:white; padding:10px 25px; border-radius:25px; margin:8px; display:inline-block; font-weight:600;">✓ Interface intuitive</span>
                 </div>
             </div>
         </div>
@@ -192,25 +27,28 @@
 <section class="oe_container oe_dark" style="padding: 60px 0;">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan section-title" style="color:#8B4A9C; font-size: 40px; font-weight: 700;">Fonctionnalités Avancées</h2>
-            <p class="oe_mt16 text-center" style="color:#666; font-size: 17px; font-weight: 300;">Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size: 40px; font-weight: 700; margin-bottom: 15px;">Fonctionnalités Avancées</h2>
+            <p class="oe_mt16 text-center" style="color:#666; font-size: 17px;">Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
+            <div style="text-align: center; margin: 25px 0;">
+                <div style="width: 100px; height: 4px; background:#FF8C42; margin: 0 auto;"></div>
+            </div>
         </div>
     </div>
     <div class="oe_row oe_spaced" style="margin-top: 40px;">
         <div class="oe_span6">
-            <div class="feature-card">
-                <div class="icon-emoji">🎫</div>
+            <div style="background:white; padding:35px; border-radius:15px; min-height:240px; text-align:center; border-top:5px solid #8B4A9C;">
+                <div style="font-size: 4.5rem; margin: 0 0 20px 0;">🎫</div>
                 <h4 style="color:#8B4A9C; font-size: 22px; margin-bottom: 15px; font-weight: 700;">Types Personnalisés</h4>
-                <p style="color:#666; line-height: 1.8; font-size: 15px; font-weight: 300;">
+                <p style="color:#666; line-height: 1.8; font-size: 15px;">
                     Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.
                 </p>
             </div>
         </div>
         <div class="oe_span6">
-            <div class="feature-card">
-                <div class="icon-emoji">🧮</div>
+            <div style="background:white; padding:35px; border-radius:15px; min-height:240px; text-align:center; border-top:5px solid #FF8C42;">
+                <div style="font-size: 4.5rem; margin: 0 0 20px 0;">🧮</div>
                 <h4 style="color:#8B4A9C; font-size: 22px; margin-bottom: 15px; font-weight: 700;">Calcul Intelligent</h4>
-                <p style="color:#666; line-height: 1.8; font-size: 15px; font-weight: 300;">
+                <p style="color:#666; line-height: 1.8; font-size: 15px;">
                     Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.
                 </p>
             </div>
@@ -218,19 +56,19 @@
     </div>
     <div class="oe_row oe_spaced" style="margin-top: 30px;">
         <div class="oe_span6">
-            <div class="feature-card">
-                <div class="icon-emoji">📱</div>
+            <div style="background:white; padding:35px; border-radius:15px; min-height:240px; text-align:center; border-top:5px solid #8B4A9C;">
+                <div style="font-size: 4.5rem; margin: 0 0 20px 0;">📱</div>
                 <h4 style="color:#8B4A9C; font-size: 22px; margin-bottom: 15px; font-weight: 700;">Scan & Saisie</h4>
-                <p style="color:#666; line-height: 1.8; font-size: 15px; font-weight: 300;">
+                <p style="color:#666; line-height: 1.8; font-size: 15px;">
                     Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.
                 </p>
             </div>
         </div>
         <div class="oe_span6">
-            <div class="feature-card">
-                <div class="icon-emoji">📊</div>
+            <div style="background:white; padding:35px; border-radius:15px; min-height:240px; text-align:center; border-top:5px solid #FF8C42;">
+                <div style="font-size: 4.5rem; margin: 0 0 20px 0;">📊</div>
                 <h4 style="color:#8B4A9C; font-size: 22px; margin-bottom: 15px; font-weight: 700;">Traçabilité Totale</h4>
-                <p style="color:#666; line-height: 1.8; font-size: 15px; font-weight: 300;">
+                <p style="color:#666; line-height: 1.8; font-size: 15px;">
                     Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.
                 </p>
             </div>
@@ -241,8 +79,11 @@
 <section class="oe_container" style="padding: 60px 0;">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan section-title" style="color:#8B4A9C; font-size: 40px; font-weight: 700;">⚙️ Guide de Configuration</h2>
-            <p class="text-center" style="color:#666; font-size: 17px; font-weight: 300;">Configuration simple et rapide</p>
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size: 40px; font-weight: 700; margin-bottom: 15px;">⚙️ Guide de Configuration</h2>
+            <p class="text-center" style="color:#666; font-size: 17px;">Configuration simple et rapide</p>
+            <div style="text-align: center; margin: 25px 0;">
+                <div style="width: 100px; height: 4px; background:#FF8C42; margin: 0 auto;"></div>
+            </div>
         </div>
     </div>
 </section>
@@ -251,19 +92,19 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">1</span>
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">1</span>
                 <span>Configuration des Types de Tickets</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="1.jpeg" alt="Configuration Types Tickets" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="1.jpeg" alt="Configuration Types Tickets" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
+            <div style="background:#FDF7FF; padding:30px; border-radius:12px; border-left:5px solid #8B4A9C; margin-top:25px;">
                 <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 12px;">📋 Interface de Configuration</h4>
-                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px; font-weight: 300;">
+                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px;">
                     Créez et paramétrez facilement vos différents types de tickets (chèques-repas, bons cadeaux) avec leurs taux de déduction spécifiques.
                 </p>
             </div>
@@ -271,23 +112,23 @@
     </div>
 </section>
 
-<section class="oe_container" style="padding: 50px 0;">
+<section class="oe_container" style="padding: 50px 0; background:#FAFAFA;">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">2</span>
+                <span style="background:#FF8C42; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">2</span>
                 <span>Configuration des Modes de Paiement</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="2.jpeg" alt="Configuration Mode Paiement" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="2.jpeg" alt="Configuration Mode Paiement" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
-                <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 12px;">💳 Modes de Paiement</h4>
-                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px; font-weight: 300;">
+            <div style="background:#FFFAF5; padding:30px; border-radius:12px; border-left:5px solid #FF8C42; margin-top:25px;">
+                <h4 style="color:#FF8C42; font-size: 20px; font-weight: 700; margin-bottom: 12px;">💳 Modes de Paiement</h4>
+                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px;">
                     Intégrez les nouveaux modes de paiement par tickets dans la liste des moyens disponibles dans votre point de vente.
                 </p>
             </div>
@@ -299,19 +140,19 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">3</span>
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">3</span>
                 <span>Paramètres du Point de Vente</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="3.jpeg" alt="Paramètres POS" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="3.jpeg" alt="Paramètres POS" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
+            <div style="background:#FDF7FF; padding:30px; border-radius:12px; border-left:5px solid #8B4A9C; margin-top:25px;">
                 <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 12px;">⚡ Configuration POS</h4>
-                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px; font-weight: 300;">
+                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px;">
                     Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic pour enregistrer les informations ou scanner le ticket.
                 </p>
             </div>
@@ -319,23 +160,23 @@
     </div>
 </section>
 
-<section class="oe_container" style="padding: 50px 0;">
+<section class="oe_container" style="padding: 50px 0; background:#FAFAFA;">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">4</span>
+                <span style="background:#FF8C42; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">4</span>
                 <span>Saisie Manuelle des Tickets</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="4.jpeg" alt="Saisie manuelle" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="4.jpeg" alt="Saisie manuelle" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
-                <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 12px;">✏️ Interface Intuitive</h4>
-                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px; font-weight: 300;">
+            <div style="background:#FFFAF5; padding:30px; border-radius:12px; border-left:5px solid #FF8C42; margin-top:25px;">
+                <h4 style="color:#FF8C42; font-size: 20px; font-weight: 700; margin-bottom: 12px;">✏️ Interface Intuitive</h4>
+                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px;">
                     Saisie rapide des informations : numéro de ticket, montant, avec calcul automatique et instantané de la déduction appliquée.
                 </p>
             </div>
@@ -347,36 +188,36 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">5</span>
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">5</span>
                 <span>Scan de Codes-Barres</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="6.jpeg" alt="Interface scan" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="6.jpeg" alt="Interface scan" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12" style="margin-top: 25px;">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="7.jpeg" alt="Résultat scan" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="7.jpeg" alt="Résultat scan" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
+            <div style="background:#FDF7FF; padding:30px; border-radius:12px; border-left:5px solid #8B4A9C; margin-top:25px;">
                 <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 15px;">📱 Mode Scanner Ultra-Rapide</h4>
-                <p style="color:#555; line-height: 1.9; margin-bottom: 20px; font-size: 15px; font-weight: 300;">
+                <p style="color:#555; line-height: 1.9; margin-bottom: 20px; font-size: 15px;">
                     Interface POS optimisée avec mode "Scanner" intégré pour une lecture instantanée des codes-barres.
                 </p>
                 <div class="oe_row">
                     <div class="oe_span6">
-                        <p class="advantage-item">✓ Lecture automatique</p>
-                        <p class="advantage-item">✓ Identification instantanée</p>
-                        <p class="advantage-item">✓ Détection du montant</p>
+                        <p style="color:#27AE60; font-weight: 600; margin: 10px 0; font-size: 15px; padding-left:10px; border-left:3px solid #27AE60;">✓ Lecture automatique</p>
+                        <p style="color:#27AE60; font-weight: 600; margin: 10px 0; font-size: 15px; padding-left:10px; border-left:3px solid #27AE60;">✓ Identification instantanée</p>
+                        <p style="color:#27AE60; font-weight: 600; margin: 10px 0; font-size: 15px; padding-left:10px; border-left:3px solid #27AE60;">✓ Détection du montant</p>
                     </div>
                     <div class="oe_span6">
-                        <p class="advantage-item">✓ Application immédiate</p>
-                        <p class="advantage-item">✓ Zéro erreur</p>
-                        <p class="advantage-item">✓ Gain de temps</p>
+                        <p style="color:#27AE60; font-weight: 600; margin: 10px 0; font-size: 15px; padding-left:10px; border-left:3px solid #27AE60;">✓ Application immédiate</p>
+                        <p style="color:#27AE60; font-weight: 600; margin: 10px 0; font-size: 15px; padding-left:10px; border-left:3px solid #27AE60;">✓ Zéro erreur</p>
+                        <p style="color:#27AE60; font-weight: 600; margin: 10px 0; font-size: 15px; padding-left:10px; border-left:3px solid #27AE60;">✓ Gain de temps</p>
                     </div>
                 </div>
             </div>
@@ -384,23 +225,23 @@
     </div>
 </section>
 
-<section class="oe_container" style="padding: 50px 0;">
+<section class="oe_container" style="padding: 50px 0; background:#FAFAFA;">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">6</span>
+                <span style="background:#FF8C42; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">6</span>
                 <span>Validation & Impression</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="9.jpeg" alt="Ticket imprimé" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="9.jpeg" alt="Ticket imprimé" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
-                <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 12px;">🧾 Reçu Professionnel</h4>
-                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px; font-weight: 300;">
+            <div style="background:#FFFAF5; padding:30px; border-radius:12px; border-left:5px solid #FF8C42; margin-top:25px;">
+                <h4 style="color:#FF8C42; font-size: 20px; font-weight: 700; margin-bottom: 12px;">🧾 Reçu Professionnel</h4>
+                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px;">
                     Ticket de caisse complet avec détail précis de tous les modes de paiement utilisés.
                 </p>
             </div>
@@ -412,19 +253,19 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
             <h3 style="color:#8B4A9C; font-size: 26px; font-weight: 700; margin-bottom: 30px;">
-                <span class="step-number" style="margin-right: 20px;">7</span>
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right: 15px; font-size: 22px; display:inline-block;">7</span>
                 <span>Suivi des Tickets</span>
             </h3>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="10.jpeg" alt="Liste des tickets" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="10.jpeg" alt="Liste des tickets" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
         <div class="oe_span12">
-            <div class="info-box">
+            <div style="background:#FDF7FF; padding:30px; border-radius:12px; border-left:5px solid #8B4A9C; margin-top:25px;">
                 <h4 style="color:#8B4A9C; font-size: 20px; font-weight: 700; margin-bottom: 12px;">📊 Gestion Complète</h4>
-                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px; font-weight: 300;">
+                <p style="color:#555; line-height: 1.9; margin: 0; font-size: 15px;">
                     Suivi des tickets traités avec toutes les informations : date, numéro, montant original, taux de rétention, déduction et montant net final.
                 </p>
             </div>
@@ -435,14 +276,17 @@
 <section class="oe_container" style="padding: 60px 0;">
     <div class="oe_row oe_spaced">
         <div class="oe_span12">
-            <h2 class="oe_slogan section-title" style="color:#8B4A9C; font-size: 40px; font-weight: 700;">🎯 Nos Services Odoo</h2>
-            <p class="text-center" style="color:#666; font-size: 17px; margin-bottom: 40px; font-weight: 300;">
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size: 40px; font-weight: 700; margin-bottom: 15px;">🎯 Nos Services Odoo</h2>
+            <p class="text-center" style="color:#666; font-size: 17px; margin-bottom: 40px;">
                 Des solutions complètes pour optimiser votre business avec Odoo
             </p>
+            <div style="text-align: center; margin: 25px 0;">
+                <div style="width: 100px; height: 4px; background:#FF8C42; margin: 0 auto;"></div>
+            </div>
         </div>
         <div class="oe_span12">
-            <div class="oe_demo oe_picture oe_screenshot screenshot-container">
-                <img class="oe_picture oe_screenshot" src="services.jpeg" alt="Services Rafiking Solutions" style="width: 100%;"/>
+            <div class="oe_demo oe_picture oe_screenshot" style="border-radius:12px; overflow:hidden;">
+                <img class="oe_picture oe_screenshot" src="services.jpeg" alt="Services Rafiking Solutions" style="width: 100%; border-radius:12px;"/>
             </div>
         </div>
     </div>
@@ -452,20 +296,20 @@
     <div class="oe_row oe_spaced">
         <div class="oe_span12 text-center">
             <h2 class="oe_slogan" style="color:#8B4A9C; font-size: 36px; margin-bottom: 30px; font-weight: 700;">Solution POS Meal & Gift Voucher</h2>
-            <div class="contact-card">
+            <div style="background:white; padding:40px; border-radius:20px; max-width:750px; margin:0 auto; border:3px solid #8B4A9C;">
                 <h3 style="color:#8B4A9C; font-size: 28px; margin-bottom: 15px; font-weight: 700;">RAFIKING Solutions</h3>
-                <p style="color:#666; font-size: 18px; margin-bottom: 30px; font-weight: 400;">
-                    <strong>Expert Odoo & Solutions Business</strong>
+                <p style="color:#666; font-size: 18px; margin-bottom: 30px; font-weight: 600;">
+                    Expert Odoo & Solutions Business
                 </p>
                 <div style="line-height: 1.8;">
-                    <div class="contact-item">
-                        📞 <strong style="color:#8B4A9C; font-size: 18px;">+216 52599228</strong>
+                    <div style="background:#F8F9FA; padding:15px; border-radius:10px; margin:12px 0;">
+                        <span style="font-size: 17px;">📞 <strong style="color:#8B4A9C; font-size: 18px;">+216 52599228</strong></span>
                     </div>
-                    <div class="contact-item">
-                        📧 <strong style="color:#8B4A9C; font-size: 18px;">contact@rafikingsolutions.com</strong>
+                    <div style="background:#F8F9FA; padding:15px; border-radius:10px; margin:12px 0;">
+                        <span style="font-size: 17px;">📧 <strong style="color:#8B4A9C; font-size: 18px;">contact@rafikingsolutions.com</strong></span>
                     </div>
-                    <div class="contact-item">
-                        🌐 <strong style="color:#8B4A9C; font-size: 18px;">www.rafikingsolutions.com</strong>
+                    <div style="background:#F8F9FA; padding:15px; border-radius:10px; margin:12px 0;">
+                        <span style="font-size: 17px;">🌐 <strong style="color:#8B4A9C; font-size: 18px;">www.rafikingsolutions.com</strong></span>
                     </div>
                 </div>
             </div>
