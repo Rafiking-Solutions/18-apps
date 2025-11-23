@@ -1,0 +1,436 @@
+/* ============================================
+   VARIABLES ET RESET
+   ============================================ */
+
+:root {
+    --primary-purple: #8B4A9C;
+    --secondary-purple: #6B3A7C;
+    --accent-orange: #FF8C42;
+    --secondary-orange: #FF7B28;
+    --light-purple: #D4B5E0;
+    --light-orange: #FFE0B3;
+    --white: #FFFFFF;
+    --light-gray: #F8F9FA;
+    --dark-gray: #333333;
+    --text-gray: #666666;
+    --success-green: #27AE60;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--dark-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero-section {
+    background: white;
+    text-align: center;
+    padding: 80px 0;
+    border-bottom: 3px solid var(--accent-orange);
+}
+
+.hero-title {
+    color: var(--primary-purple);
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hero-subtitle {
+    color: var(--text-gray);
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.hero-description {
+    font-size: 19px;
+    color: var(--text-gray);
+    margin-top: 20px;
+}
+
+.hero-badges {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.badge {
+    background: var(--accent-orange);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    margin: 8px;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+
+.features-section {
+    background: var(--light-gray);
+    padding: 80px 0;
+}
+
+.section-title {
+    color: var(--primary-purple);
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.section-subtitle {
+    color: var(--text-gray);
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.divider {
+    width: 100px;
+    height: 4px;
+    background: var(--accent-orange);
+    margin: 25px auto;
+    border-radius: 2px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    border-top: 5px solid var(--primary-purple);
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(139, 74, 156, 0.15);
+    border-top-color: var(--accent-orange);
+}
+
+.feature-card:nth-child(even) {
+    border-top-color: var(--accent-orange);
+}
+
+.emoji {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.feature-title {
+    color: var(--primary-purple);
+    font-size: 22px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.feature-text {
+    color: var(--text-gray);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+/* ============================================
+   FONCTIONNEMENT SECTION
+   ============================================ */
+
+.fonctionnement-section {
+    background: white;
+    padding: 60px 0;
+    border-bottom: 3px solid var(--accent-orange);
+}
+
+/* ============================================
+   STEP SECTIONS
+   ============================================ */
+
+.step-section {
+    padding: 60px 0;
+}
+
+.step-dark {
+    background: var(--light-gray);
+}
+
+.step-light {
+    background: white;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.step-number-purple {
+    background: var(--primary-purple);
+}
+
+.step-number-orange {
+    background: var(--accent-orange);
+}
+
+.step-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.step-title-purple {
+    color: var(--primary-purple);
+}
+
+.step-title-orange {
+    color: var(--accent-orange);
+}
+
+.step-image {
+    margin: 30px 0;
+}
+
+.step-images-double {
+    margin: 30px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.step-images-double img {
+    flex: 1;
+    min-width: 300px;
+}
+
+.responsive-img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.step-description {
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 25px;
+    border-left: 8px solid;
+}
+
+.step-description-purple {
+    background: var(--light-purple);
+    border-left-color: var(--primary-purple);
+}
+
+.step-description-orange {
+    background: var(--light-orange);
+    border-left-color: var(--accent-orange);
+}
+
+.description-title {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.step-description-purple .description-title {
+    color: var(--primary-purple);
+}
+
+.step-description-orange .description-title {
+    color: var(--accent-orange);
+}
+
+.description-text {
+    color: var(--dark-gray);
+    line-height: 1.9;
+    font-size: 15px;
+}
+
+.checklist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.checklist-col {
+    text-align: left;
+}
+
+.check-item {
+    color: var(--success-green);
+    margin: 10px 0;
+    font-size: 15px;
+    padding-left: 10px;
+    border-left: 3px solid var(--success-green);
+    font-weight: 600;
+}
+
+/* ============================================
+   SERVICES SECTION
+   ============================================ */
+
+.services-section {
+    background: white;
+    padding: 80px 0;
+    border-bottom: 3px solid var(--accent-orange);
+}
+
+.services-image {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* ============================================
+   FOOTER SECTION
+   ============================================ */
+
+.footer-section {
+    background: var(--primary-purple);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.footer-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.footer-card {
+    background: white;
+    color: var(--dark-gray);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    border: 3px solid var(--primary-purple);
+}
+
+.footer-company {
+    color: var(--primary-purple);
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.footer-tagline {
+    color: var(--text-gray);
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-item {
+    background: var(--light-gray);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.contact-item p {
+    font-size: 17px;
+    margin: 0;
+}
+
+.contact-item strong {
+    color: var(--primary-purple);
+    font-size: 18px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 32px;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .step-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .step-number {
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+
+    .step-title {
+        font-size: 22px;
+    }
+
+    .checklist-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-card {
+        padding: 30px 20px;
+    }
+
+    .step-images-double {
+        flex-direction: column;
+    }
+}
