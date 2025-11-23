@@ -1,511 +1,313 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POS Meal & Gift Voucher</title>
-    <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #2c3e50;
-    background: #fff;
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin: 50px 0 15px;
-    text-align: center;
-    color: #1a1a2e;
-}
-
-h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin: 60px 0 30px;
-    padding-bottom: 15px;
-    border-bottom: 3px solid #0066cc;
-    color: #1a1a2e;
-}
-
-h3 {
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a1a2e;
-}
-
-p {
-    font-size: 15px;
-    line-height: 1.8;
-    margin-bottom: 12px;
-    color: #555;
-}
-
-.intro {
-    text-align: center;
-    margin: 30px 0 40px;
-    font-size: 16px;
-}
-
-.intro p:first-child {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-.intro p:last-child {
-    color: #666;
-}
-
-.features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-    margin: 40px 0 60px;
-}
-
-.feature-box {
-    padding: 30px;
-    background: linear-gradient(135deg, #f5f7ff 0%, #f0f4ff 100%);
-    border-radius: 8px;
-    border-left: 5px solid #0066cc;
-    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
-    transition: all 0.3s ease;
-}
-
-.feature-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.15);
-}
-
-.feature-box h3 {
-    font-size: 18px;
-    margin-bottom: 12px;
-    color: #0066cc;
-}
-
-.feature-box p {
-    font-size: 14px;
-    color: #555;
-}
-
-.step {
-    margin: 50px 0;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
-
-.step-body {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-}
-
-.step:nth-child(even) .step-body {
-    grid-template-columns: 1fr 1fr;
-    direction: rtl;
-}
-
-.step:nth-child(even) .step-body > * {
-    direction: ltr;
-}
-
-.step-image {
-    background: linear-gradient(135deg, #f0f0f0 0%, #e8e8e8 100%);
-    min-height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.step-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.step-text {
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.step-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 18px;
-    margin-bottom: 20px;
-}
-
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 20px;
-    flex-shrink: 0;
-    box-shadow: 0 2px 8px rgba(0, 102, 204, 0.3);
-}
-
-.step-content h3 {
-    font-size: 22px;
-    margin: 0 0 15px 0;
-    color: #0066cc;
-}
-
-.step-content p {
-    font-size: 15px;
-    margin-bottom: 15px;
-    color: #555;
-}
-
-.info-box {
-    background: linear-gradient(135deg, #f0f7ff 0%, #e8f2ff 100%);
-    border-left: 5px solid #0066cc;
-    padding: 18px;
-    margin: 20px 0;
-    border-radius: 6px;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.info-box strong {
-    color: #0066cc;
-    font-weight: 600;
-}
-
-.checklist {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 20px 0;
-}
-
-.checklist-item {
-    padding: 8px 0;
-    font-size: 14px;
-    color: #555;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.checklist-item::before {
-    content: "✓";
-    color: #0066cc;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.services-image {
-    width: 100%;
-    margin: 40px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.contact-box {
-    background: linear-gradient(135deg, #f0f7ff 0%, #f5f7ff 100%);
-    border: 2px solid #0066cc;
-    border-radius: 8px;
-    padding: 50px 40px;
-    text-align: center;
-    margin: 50px 0;
-    box-shadow: 0 4px 16px rgba(0, 102, 204, 0.1);
-}
-
-.contact-box h3 {
-    font-size: 28px;
-    margin-bottom: 12px;
-    color: #0066cc;
-}
-
-.contact-box p {
-    font-size: 15px;
-    margin-bottom: 30px;
-}
-
-.contact-info {
-    margin: 16px 0;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.contact-info strong {
-    color: #0066cc;
-}
-
-@media (max-width: 768px) {
-    .features {
-        grid-template-columns: 1fr;
-    }
-
-    .step-body {
-        grid-template-columns: 1fr;
-    }
-
-    .step:nth-child(even) .step-body {
-        direction: ltr;
-    }
-
-    .checklist {
-        grid-template-columns: 1fr;
-    }
-
-    .step-text {
-        padding: 30px;
-    }
-
-    .step-image {
-        min-height: 250px;
-    }
-
-    h1 {
-        font-size: 36px;
-    }
-
-    h2 {
-        font-size: 26px;
-    }
-
-    .contact-box {
-        padding: 30px 20px;
-    }
-}
-    </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>🎫 POS Meal & Gift Voucher</h1>
-
-    <div class="intro">
-        <p>Solution complète Odoo pour gérer facilement les chèques-repas et bons cadeaux</p>
-        <p>Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.</p>
-    </div>
-
-    <h2>Fonctionnalités Avancées</h2>
-
-    <div class="features">
-        <div class="feature-box">
-            <h3>✨ Types Personnalisés</h3>
-            <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
-        </div>
-        <div class="feature-box">
-            <h3>⚙️ Calcul Intelligent</h3>
-            <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
-        </div>
-        <div class="feature-box">
-            <h3>📱 Scan & Saisie</h3>
-            <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
-        </div>
-        <div class="feature-box">
-            <h3>🔍 Traçabilité Totale</h3>
-            <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
-        </div>
-    </div>
-
-    <h2>Guide de Configuration</h2>
-
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="1.jpeg" alt="Configuration Types Tickets"/>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size:42px; text-align:center;">POS MEAL &amp; GIFT VOUCHER</h2>
+            <h3 class="oe_slogan" style="color:#666; text-align:center; font-size:20px;">Solution complète Odoo pour gérer facilement les chèques-repas et bons cadeaux</h3>
+            <p class="oe_mt32" style="text-align:center; font-size:17px; color:#555; margin-top:20px;">
+                Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.
+            </p>
+            <div style="text-align:center; margin-top:25px;">
+                <span style="background:#FF8C42; color:white; padding:10px 22px; border-radius:20px; margin:6px; display:inline-block; font-size:14px;">Odoo Enterprise</span>
+                <span style="background:#FF8C42; color:white; padding:10px 22px; border-radius:20px; margin:6px; display:inline-block; font-size:14px;">Odoo Community</span>
+                <span style="background:#FF8C42; color:white; padding:10px 22px; border-radius:20px; margin:6px; display:inline-block; font-size:14px;">Interface intuitive</span>
             </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">1</div>
-                        <h3>Configuration des Types de Tickets</h3>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size:36px; text-align:center;">Fonctionnalités Avancées</h2>
+            <p class="oe_mt16" style="text-align:center; color:#666; font-size:16px; margin-top:10px;">Une solution complète pour gérer les chèques-repas et bons cadeaux</p>
+            <div style="text-align:center; margin:20px 0;">
+                <div style="width:80px; height:4px; background:#FF8C42; margin:0 auto;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <div style="background:white; padding:30px 20px; border-radius:10px; text-align:center; border-top:4px solid #8B4A9C; min-height:180px; margin-bottom:20px;">
+                <h4 style="color:#8B4A9C; font-size:20px; margin:0 0 12px 0; font-weight:bold;">Types Personnalisés</h4>
+                <p style="color:#666; line-height:1.7; font-size:15px; margin:0;">
+                    Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span6">
+            <div style="background:white; padding:30px 20px; border-radius:10px; text-align:center; border-top:4px solid #FF8C42; min-height:180px; margin-bottom:20px;">
+                <h4 style="color:#8B4A9C; font-size:20px; margin:0 0 12px 0; font-weight:bold;">Calcul Intelligent</h4>
+                <p style="color:#666; line-height:1.7; font-size:15px; margin:0;">
+                    Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <div style="background:white; padding:30px 20px; border-radius:10px; text-align:center; border-top:4px solid #8B4A9C; min-height:180px; margin-bottom:20px;">
+                <h4 style="color:#8B4A9C; font-size:20px; margin:0 0 12px 0; font-weight:bold;">Scan &amp; Saisie</h4>
+                <p style="color:#666; line-height:1.7; font-size:15px; margin:0;">
+                    Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.
+                </p>
+            </div>
+        </div>
+        <div class="oe_span6">
+            <div style="background:white; padding:30px 20px; border-radius:10px; text-align:center; border-top:4px solid #FF8C42; min-height:180px; margin-bottom:20px;">
+                <h4 style="color:#8B4A9C; font-size:20px; margin:0 0 12px 0; font-weight:bold;">Traçabilité Totale</h4>
+                <p style="color:#666; line-height:1.7; font-size:15px; margin:0;">
+                    Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size:36px; text-align:center;">Guide de Configuration</h2>
+            <p style="text-align:center; color:#666; font-size:16px; margin-top:10px;">Configuration simple et rapide</p>
+            <div style="text-align:center; margin:20px 0;">
+                <div style="width:80px; height:4px; background:#FF8C42; margin:0 auto;"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#8B4A9C; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">1</span>
+                Configuration des Types de Tickets
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="1.jpeg" alt="Configuration Types Tickets"/>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#E8D5ED; padding:25px; border-radius:8px; border-left:5px solid #8B4A9C; margin-top:20px;">
+                <h4 style="color:#8B4A9C; font-size:18px; margin:0 0 10px 0; font-weight:bold;">Interface de Configuration</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0;">
+                    Créez et paramétrez facilement vos différents types de tickets (chèques-repas, bons cadeaux) avec leurs taux de déduction spécifiques.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#FF8C42; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#FF8C42; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">2</span>
+                Configuration des Modes de Paiement
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="2.jpeg" alt="Configuration Mode Paiement"/>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#FFE8CC; padding:25px; border-radius:8px; border-left:5px solid #FF8C42; margin-top:20px;">
+                <h4 style="color:#FF8C42; font-size:18px; margin:0 0 10px 0; font-weight:bold;">Modes de Paiement</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0;">
+                    Intégrez les nouveaux modes de paiement par tickets dans la liste des moyens disponibles dans votre point de vente.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#8B4A9C; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">3</span>
+                Paramètres du Point de Vente
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="3.jpeg" alt="Paramètres POS"/>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#E8D5ED; padding:25px; border-radius:8px; border-left:5px solid #8B4A9C; margin-top:20px;">
+                <h4 style="color:#8B4A9C; font-size:18px; margin:0 0 10px 0; font-weight:bold;">Configuration POS</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0;">
+                    Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic pour enregistrer les informations ou scanner le ticket.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#FF8C42; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#FF8C42; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">4</span>
+                Saisie Manuelle des Tickets
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="4.jpeg" alt="Saisie manuelle"/>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#FFE8CC; padding:25px; border-radius:8px; border-left:5px solid #FF8C42; margin-top:20px;">
+                <h4 style="color:#FF8C42; font-size:18px; margin:0 0 10px 0; font-weight:bold;">Interface Intuitive</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0;">
+                    Saisie rapide des informations : numéro de ticket, montant, avec calcul automatique et instantané de la déduction appliquée.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#8B4A9C; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">5</span>
+                Scan de Codes-Barres
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="6.jpeg" alt="Interface scan"/>
+            </div>
+        </div>
+        <div class="oe_span12" style="margin-top:20px;">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="7.jpeg" alt="Résultat scan"/>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#E8D5ED; padding:25px; border-radius:8px; border-left:5px solid #8B4A9C; margin-top:20px;">
+                <h4 style="color:#8B4A9C; font-size:18px; margin:0 0 15px 0; font-weight:bold;">Mode Scanner Ultra-Rapide</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0 0 15px 0;">
+                    Interface POS optimisée avec mode "Scanner" intégré pour une lecture instantanée des codes-barres.
+                </p>
+                <div class="oe_row">
+                    <div class="oe_span6">
+                        <p style="color:#27AE60; margin:8px 0; font-size:15px; padding-left:12px; border-left:3px solid #27AE60; font-weight:600;">Lecture automatique</p>
+                        <p style="color:#27AE60; margin:8px 0; font-size:15px; padding-left:12px; border-left:3px solid #27AE60; font-weight:600;">Identification instantanée</p>
+                        <p style="color:#27AE60; margin:8px 0; font-size:15px; padding-left:12px; border-left:3px solid #27AE60; font-weight:600;">Détection du montant</p>
                     </div>
-                    <p>Créez et paramétrez facilement vos différents types de tickets (chèques-repas, bons cadeaux) avec leurs taux de déduction spécifiques.</p>
-                    <div class="info-box">
-                        <strong>📋 Interface de Configuration</strong><br>
-                        Définissez précisément les caractéristiques de chaque type de ticket pour adapter la solution à vos besoins.
+                    <div class="oe_span6">
+                        <p style="color:#27AE60; margin:8px 0; font-size:15px; padding-left:12px; border-left:3px solid #27AE60; font-weight:600;">Application immédiate</p>
+                        <p style="color:#27AE60; margin:8px 0; font-size:15px; padding-left:12px; border-left:3px solid #27AE60; font-weight:600;">Zéro erreur</p>
+                        <p style="color:#27AE60; margin:8px 0; font-size:15px; padding-left:12px; border-left:3px solid #27AE60; font-weight:600;">Gain de temps</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="2.jpeg" alt="Configuration Mode Paiement"/>
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#FF8C42; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#FF8C42; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">6</span>
+                Validation &amp; Impression
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="9.jpeg" alt="Ticket imprimé"/>
             </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">2</div>
-                        <h3>Configuration des Modes de Paiement</h3>
-                    </div>
-                    <p>Intégrez les nouveaux modes de paiement par tickets dans la liste des moyens disponibles dans votre point de vente.</p>
-                    <div class="info-box">
-                        <strong>💳 Modes de Paiement</strong><br>
-                        Associez chaque mode de paiement aux types de tickets autorisés pour un contrôle total.
-                    </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#FFE8CC; padding:25px; border-radius:8px; border-left:5px solid #FF8C42; margin-top:20px;">
+                <h4 style="color:#FF8C42; font-size:18px; margin:0 0 10px 0; font-weight:bold;">Reçu Professionnel</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0;">
+                    Ticket de caisse complet avec détail précis de tous les modes de paiement utilisés.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h3 style="color:#8B4A9C; font-size:26px; margin-bottom:25px; font-weight:bold;">
+                <span style="background:#8B4A9C; color:white; padding:8px 18px; border-radius:10px; margin-right:12px; font-size:22px;">7</span>
+                Suivi des Tickets
+            </h3>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="10.jpeg" alt="Liste des tickets"/>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div style="background:#E8D5ED; padding:25px; border-radius:8px; border-left:5px solid #8B4A9C; margin-top:20px;">
+                <h4 style="color:#8B4A9C; font-size:18px; margin:0 0 10px 0; font-weight:bold;">Gestion Complète</h4>
+                <p style="color:#333; line-height:1.8; font-size:15px; margin:0;">
+                    Suivi des tickets traités avec toutes les informations : date, numéro, montant original, taux de rétention, déduction et montant net final.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size:36px; text-align:center;">Nos Services Odoo</h2>
+            <p style="text-align:center; color:#666; font-size:16px; margin-top:10px; margin-bottom:30px;">
+                Des solutions complètes pour optimiser votre business avec Odoo
+            </p>
+            <div style="text-align:center; margin:20px 0;">
+                <div style="width:80px; height:4px; background:#FF8C42; margin:0 auto;"></div>
+            </div>
+        </div>
+        <div class="oe_span12">
+            <div class="oe_demo oe_picture oe_screenshot">
+                <img class="oe_picture oe_screenshot" src="services.jpeg" alt="Services Rafiking Solutions"/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <div class="oe_span12">
+            <h2 class="oe_slogan" style="color:#8B4A9C; font-size:32px; text-align:center; margin-bottom:30px;">Solution POS Meal &amp; Gift Voucher</h2>
+            <div style="background:white; padding:35px; border-radius:12px; max-width:600px; margin:0 auto; border:3px solid #8B4A9C;">
+                <h3 style="color:#8B4A9C; font-size:26px; text-align:center; margin:0 0 10px 0; font-weight:bold;">RAFIKING Solutions</h3>
+                <p style="color:#666; font-size:17px; text-align:center; margin:0 0 25px 0;">
+                    <strong>Expert Odoo &amp; Solutions Business</strong>
+                </p>
+                <div style="background:#F5F5F5; padding:15px; border-radius:8px; margin:10px 0; text-align:center;">
+                    <strong style="color:#8B4A9C; font-size:16px;">Tel: +216 52599228</strong>
+                </div>
+                <div style="background:#F5F5F5; padding:15px; border-radius:8px; margin:10px 0; text-align:center;">
+                    <strong style="color:#8B4A9C; font-size:16px;">Email: contact@rafikingsolutions.com</strong>
+                </div>
+                <div style="background:#F5F5F5; padding:15px; border-radius:8px; margin:10px 0; text-align:center;">
+                    <strong style="color:#8B4A9C; font-size:16px;">Web: www.rafikingsolutions.com</strong>
                 </div>
             </div>
         </div>
     </div>
-
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="3.jpeg" alt="Paramètres POS"/>
-            </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">3</div>
-                        <h3>Paramètres du Point de Vente</h3>
-                    </div>
-                    <p>Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic pour enregistrer les informations ou scanner le ticket.</p>
-                    <div class="info-box">
-                        <strong>⚡ Configuration POS</strong><br>
-                        Activez les modes de paiement par tickets dans votre configuration POS.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="4.jpeg" alt="Saisie manuelle"/>
-            </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">4</div>
-                        <h3>Saisie Manuelle des Tickets</h3>
-                    </div>
-                    <p>Saisie rapide des informations : numéro de ticket, montant, avec calcul automatique et instantané de la déduction appliquée.</p>
-                    <div class="info-box">
-                        <strong>✏️ Interface Intuitive</strong><br>
-                        L'interface propose une saisie simple et rapide avec validation en temps réel.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="6.jpeg" alt="Interface scan"/>
-            </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">5</div>
-                        <h3>Scan de Codes-Barres</h3>
-                    </div>
-                    <p>Interface POS optimisée avec mode "Scanner" intégré pour une lecture instantanée des codes-barres.</p>
-                    <div class="checklist">
-                        <div class="checklist-item">Lecture automatique</div>
-                        <div class="checklist-item">Identification instantanée</div>
-                        <div class="checklist-item">Détection du montant</div>
-                        <div class="checklist-item">Application immédiate</div>
-                        <div class="checklist-item">Zéro erreur</div>
-                        <div class="checklist-item">Gain de temps</div>
-                    </div>
-                    <div class="info-box">
-                        <strong>📱 Mode Scanner Ultra-Rapide</strong><br>
-                        Scannez directement les codes-barres pour une intégration sans effort.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="9.jpeg" alt="Ticket imprimé"/>
-            </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">6</div>
-                        <h3>Validation & Impression</h3>
-                    </div>
-                    <p>Ticket de caisse complet avec détail précis de tous les modes de paiement utilisés.</p>
-                    <div class="info-box">
-                        <strong>🧾 Reçu Professionnel</strong><br>
-                        Les reçus incluent tous les détails des paiements par tickets pour une traçabilité complète.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="step">
-        <div class="step-body">
-            <div class="step-image">
-                <img src="10.jpeg" alt="Liste des tickets"/>
-            </div>
-            <div class="step-text">
-                <div class="step-content">
-                    <div class="step-header">
-                        <div class="step-number">7</div>
-                        <h3>Suivi des Tickets</h3>
-                    </div>
-                    <p>Suivi des tickets traités avec toutes les informations : date, numéro, montant original, taux de rétention, déduction et montant net final.</p>
-                    <div class="info-box">
-                        <strong>📊 Gestion Complète</strong><br>
-                        Consultez l'historique complet de tous les tickets utilisés pour l'audit et le reporting.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <h2>Nos Services Odoo</h2>
-    <img src="services.jpeg" alt="Services Rafiking Solutions" class="services-image"/>
-
-    <h2>Solution POS Meal & Gift Voucher</h2>
-
-    <div class="contact-box">
-        <h3>RAFIKING Solutions</h3>
-        <p><strong>Expert Odoo & Solutions Business</strong></p>
-        <div class="contact-info">
-            <strong>📞 +216 52599228</strong>
-        </div>
-        <div class="contact-info">
-            <strong>📧 contact@rafikingsolutions.com</strong>
-        </div>
-        <div class="contact-info">
-            <strong>🌐 www.rafikingsolutions.com</strong>
-        </div>
-    </div>
-
-</div>
+</section>
 
 </body>
 </html>
