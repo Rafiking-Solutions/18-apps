@@ -5,305 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POS Meal & Gift Voucher</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #3a3a3a;
-            background: #ffffff;
-            line-height: 1.5;
-        }
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: #fff;
+    line-height: 1.6;
+}
 
-        .content {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        h1 {
-            font-size: 42px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            text-align: center;
-        }
+h1 {
+    font-size: 40px;
+    margin: 40px 0 10px;
+    text-align: center;
+}
 
-        .tagline {
-            text-align: center;
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
-        }
+h2 {
+    font-size: 28px;
+    margin: 50px 0 20px;
+    padding-top: 20px;
+}
 
-        .intro {
-            text-align: center;
-            font-size: 16px;
-            color: #555;
-            margin-bottom: 50px;
-            line-height: 1.6;
-        }
+p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
 
-        h2 {
-            font-size: 32px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin: 50px 0 30px 0;
-            padding-top: 20px;
-            border-top: 1px solid #e8e8e8;
-        }
+.intro {
+    text-align: center;
+    margin: 30px 0;
+}
 
-        h2:first-of-type {
-            border-top: none;
-            margin-top: 0;
-            padding-top: 0;
-        }
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+}
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin: 40px 0;
-        }
+.feature-box {
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 4px;
+    border-left: 4px solid #0066cc;
+}
 
-        @media (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+.feature-box h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
-        .feature {
-            padding: 30px;
-            background: #f9f9f9;
-            border-radius: 4px;
-            border-left: 4px solid #1a73e8;
-        }
+.feature-box p {
+    font-size: 14px;
+}
 
-        .feature h3 {
-            font-size: 18px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
+.step {
+    margin: 40px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
 
-        .feature p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-        }
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
 
-        .step-container {
-            margin: 50px 0;
-            border: 1px solid #e8e8e8;
-            border-radius: 4px;
-            overflow: hidden;
-        }
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #0066cc;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
 
-        .step {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0;
-            background: white;
-        }
+.step h3 {
+    font-size: 20px;
+    margin: 0;
+}
 
-        .step:nth-child(even) {
-            direction: rtl;
-        }
+.step-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 15px;
+}
 
-        .step:nth-child(even) > * {
-            direction: ltr;
-        }
+.step-text p {
+    font-size: 14px;
+}
 
-        .step-content {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background: #ffffff;
-        }
+.info-box {
+    background: #f0f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    font-size: 13px;
+}
 
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #1a73e8;
-            color: white;
-            border-radius: 50%;
-            font-weight: 700;
-            margin-bottom: 16px;
-            font-size: 18px;
-        }
+.info-box strong {
+    color: #0066cc;
+}
 
-        .step-content h3 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 16px;
-        }
+.step-image {
+    background: #f0f0f0;
+    min-height: 250px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .step-content p {
-            font-size: 14px;
-            color: #555;
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
+.step-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
 
-        .step-image {
-            background: #f0f0f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-            position: relative;
-            overflow: hidden;
-        }
+.checklist {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 14px;
+}
 
-        .step-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.checklist-item {
+    padding: 5px 0;
+}
 
-        .info-box {
-            background: #f0f7ff;
-            border-left: 4px solid #1a73e8;
-            padding: 16px;
-            border-radius: 4px;
-            margin: 20px 0;
-            font-size: 13px;
-        }
+.checklist-item::before {
+    content: "✓ ";
+    color: #0066cc;
+    font-weight: bold;
+}
 
-        .info-box strong {
-            color: #1a73e8;
-        }
+.services-image {
+    width: 100%;
+    margin: 30px 0;
+    border-radius: 4px;
+}
 
-        .check-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin: 20px 0;
-        }
+.contact-box {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    margin: 30px 0;
+}
 
-        @media (max-width: 768px) {
-            .check-list {
-                grid-template-columns: 1fr;
-            }
-        }
+.contact-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
 
-        .check-item {
-            display: flex;
-            gap: 8px;
-            font-size: 14px;
-            color: #555;
-        }
+.contact-info {
+    margin: 15px 0;
+    font-size: 14px;
+}
 
-        .check-item::before {
-            content: "✓";
-            color: #1a73e8;
-            font-weight: 700;
-            flex-shrink: 0;
-        }
+@media (max-width: 768px) {
+    .features {
+        grid-template-columns: 1fr;
+    }
 
-        .services-image {
-            width: 100%;
-            margin: 40px 0;
-            border-radius: 4px;
-            display: block;
-        }
+    .step-body {
+        grid-template-columns: 1fr;
+    }
 
-        .contact-box {
-            background: #f9f9f9;
-            border: 1px solid #e8e8e8;
-            border-radius: 4px;
-            padding: 40px;
-            text-align: center;
-            margin: 40px 0;
-        }
+    .checklist {
+        grid-template-columns: 1fr;
+    }
 
-        .contact-box h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 12px;
-        }
+    h1 {
+        font-size: 28px;
+    }
 
-        .contact-box .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        .contact-item {
-            margin: 16px 0;
-            font-size: 14px;
-        }
-
-        .contact-item strong {
-            color: #1a73e8;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .step {
-                grid-template-columns: 1fr;
-            }
-
-            .step:nth-child(even) {
-                direction: ltr;
-            }
-
-            .step-content {
-                padding: 30px 20px;
-            }
-
-            h1 {
-                font-size: 32px;
-            }
-
-            h2 {
-                font-size: 24px;
-            }
-
-            .features-grid {
-                gap: 20px;
-            }
-
-            .feature {
-                padding: 20px;
-            }
-        }
+    h2 {
+        font-size: 22px;
+    }
+}
     </style>
 </head>
 <body>
 
-<div class="content">
+<div class="container">
     <h1>🎫 POS Meal & Gift Voucher</h1>
-    <p class="tagline">Solution complète Odoo pour gérer facilement les chèques-repas et bons cadeaux depuis votre point de vente.</p>
-    <p class="intro">Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.</p>
+
+    <div class="intro">
+        <p><strong>Solution complète Odoo pour gérer facilement les chèques-repas et bons cadeaux depuis votre point de vente.</strong></p>
+        <p>Scan automatique ou saisie manuelle avec application intelligente du taux de rétention.</p>
+    </div>
 
     <h2>Fonctionnalités Avancées</h2>
-    <div class="features-grid">
-        <div class="feature">
+
+    <div class="features">
+        <div class="feature-box">
             <h3>Types Personnalisés</h3>
             <p>Créez et gérez différents types de tickets : chèques-repas, bons cadeaux avec taux de déduction sur mesure.</p>
         </div>
-        <div class="feature">
+        <div class="feature-box">
             <h3>Calcul Intelligent</h3>
             <p>Application automatique et précise du taux de rétention selon la configuration de chaque type de ticket.</p>
         </div>
-        <div class="feature">
+        <div class="feature-box">
             <h3>Scan & Saisie</h3>
             <p>Double fonctionnalité : scan de codes-barres ultra-rapide et interface de saisie manuelle intuitive.</p>
         </div>
-        <div class="feature">
+        <div class="feature-box">
             <h3>Traçabilité Totale</h3>
             <p>Suivi complet et détaillé de tous les tickets utilisés avec historique intégré.</p>
         </div>
@@ -311,41 +239,51 @@
 
     <h2>Guide de Configuration</h2>
 
-    <div class="step-container">
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">1</div>
-                <h3>Configuration des Types de Tickets</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">1</div>
+            <h3>Configuration des Types de Tickets</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Créez et paramétrez facilement vos différents types de tickets (chèques-repas, bons cadeaux) avec leurs taux de déduction spécifiques.</p>
                 <div class="info-box">
                     <strong>📋 Interface de Configuration</strong><br>
-                    Définissez précisément les caractéristiques de chaque type de ticket pour adapter la solution à vos besoins.
+                    Définissez précisément les caractéristiques de chaque type de ticket.
                 </div>
             </div>
             <div class="step-image">
                 <img src="1.jpeg" alt="Configuration Types Tickets"/>
             </div>
         </div>
+    </div>
 
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">2</div>
-                <h3>Configuration des Modes de Paiement</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">2</div>
+            <h3>Configuration des Modes de Paiement</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Intégrez les nouveaux modes de paiement par tickets dans la liste des moyens disponibles dans votre point de vente.</p>
                 <div class="info-box">
                     <strong>💳 Modes de Paiement</strong><br>
-                    Associez chaque mode de paiement aux types de tickets autorisés pour un contrôle total.
+                    Associez chaque mode de paiement aux types de tickets autorisés.
                 </div>
             </div>
             <div class="step-image">
                 <img src="2.jpeg" alt="Configuration Mode Paiement"/>
             </div>
         </div>
+    </div>
 
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">3</div>
-                <h3>Paramètres du Point de Vente</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">3</div>
+            <h3>Paramètres du Point de Vente</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Pour les paiements de type chèques, une fenêtre contextuelle s'affichera lors du clic pour enregistrer les informations ou scanner le ticket.</p>
                 <div class="info-box">
                     <strong>⚡ Configuration POS</strong><br>
@@ -356,11 +294,15 @@
                 <img src="3.jpeg" alt="Paramètres POS"/>
             </div>
         </div>
+    </div>
 
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">4</div>
-                <h3>Saisie Manuelle des Tickets</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">4</div>
+            <h3>Saisie Manuelle des Tickets</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Saisie rapide des informations : numéro de ticket, montant, avec calcul automatique et instantané de la déduction appliquée.</p>
                 <div class="info-box">
                     <strong>✏️ Interface Intuitive</strong><br>
@@ -371,19 +313,23 @@
                 <img src="4.jpeg" alt="Saisie manuelle"/>
             </div>
         </div>
+    </div>
 
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">5</div>
-                <h3>Scan de Codes-Barres</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">5</div>
+            <h3>Scan de Codes-Barres</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Interface POS optimisée avec mode "Scanner" intégré pour une lecture instantanée des codes-barres.</p>
-                <div class="check-list">
-                    <div class="check-item">Lecture automatique</div>
-                    <div class="check-item">Identification instantanée</div>
-                    <div class="check-item">Détection du montant</div>
-                    <div class="check-item">Application immédiate</div>
-                    <div class="check-item">Zéro erreur</div>
-                    <div class="check-item">Gain de temps</div>
+                <div class="checklist">
+                    <div class="checklist-item">Lecture automatique</div>
+                    <div class="checklist-item">Identification instantanée</div>
+                    <div class="checklist-item">Détection du montant</div>
+                    <div class="checklist-item">Application immédiate</div>
+                    <div class="checklist-item">Zéro erreur</div>
+                    <div class="checklist-item">Gain de temps</div>
                 </div>
                 <div class="info-box">
                     <strong>📱 Mode Scanner Ultra-Rapide</strong><br>
@@ -394,11 +340,15 @@
                 <img src="6.jpeg" alt="Interface scan"/>
             </div>
         </div>
+    </div>
 
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">6</div>
-                <h3>Validation & Impression</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">6</div>
+            <h3>Validation & Impression</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Ticket de caisse complet avec détail précis de tous les modes de paiement utilisés.</p>
                 <div class="info-box">
                     <strong>🧾 Reçu Professionnel</strong><br>
@@ -409,11 +359,15 @@
                 <img src="9.jpeg" alt="Ticket imprimé"/>
             </div>
         </div>
+    </div>
 
-        <div class="step">
-            <div class="step-content">
-                <div class="step-number">7</div>
-                <h3>Suivi des Tickets</h3>
+    <div class="step">
+        <div class="step-header">
+            <div class="step-number">7</div>
+            <h3>Suivi des Tickets</h3>
+        </div>
+        <div class="step-body">
+            <div class="step-text">
                 <p>Suivi des tickets traités avec toutes les informations : date, numéro, montant original, taux de rétention, déduction et montant net final.</p>
                 <div class="info-box">
                     <strong>📊 Gestion Complète</strong><br>
@@ -430,19 +384,21 @@
     <img src="services.jpeg" alt="Services Rafiking Solutions" class="services-image"/>
 
     <h2>Solution POS Meal & Gift Voucher</h2>
+
     <div class="contact-box">
         <h3>RAFIKING Solutions</h3>
-        <p class="subtitle">Expert Odoo & Solutions Business</p>
-        <div class="contact-item">
+        <p><strong>Expert Odoo & Solutions Business</strong></p>
+        <div class="contact-info">
             <strong>📞 +216 52599228</strong>
         </div>
-        <div class="contact-item">
+        <div class="contact-info">
             <strong>📧 contact@rafikingsolutions.com</strong>
         </div>
-        <div class="contact-item">
+        <div class="contact-info">
             <strong>🌐 www.rafikingsolutions.com</strong>
         </div>
     </div>
+
 </div>
 
 </body>
